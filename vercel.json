@@ -1,0 +1,101 @@
+{
+  "redirects": [
+    { "source": "/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven", "destination": "/blog/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven/", "statusCode": 301 },
+    { "source": "/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven/", "destination": "/blog/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven/", "statusCode": 301 },
+    { "source": "/http-error-500", "destination": "/blog/http-error-500/", "statusCode": 301 },
+    { "source": "/http-error-500/", "destination": "/blog/http-error-500/", "statusCode": 301 },
+    { "source": "/wat-met-je-website-bij-overlijden", "destination": "/blog/wat-met-je-website-bij-overlijden/", "statusCode": 301 },
+    { "source": "/wat-met-je-website-bij-overlijden/", "destination": "/blog/wat-met-je-website-bij-overlijden/", "statusCode": 301 },
+    { "source": "/zo-vermijd-je-cookieboetes", "destination": "/blog/zo-vermijd-je-cookieboetes/", "statusCode": 301 },
+    { "source": "/zo-vermijd-je-cookieboetes/", "destination": "/blog/zo-vermijd-je-cookieboetes/", "statusCode": 301 },
+    { "source": "/krijg-subsidie-voor-de-vertaling-van-je-website", "destination": "/blog/krijg-subsidie-voor-de-vertaling-van-je-website/", "statusCode": 301 },
+    { "source": "/je-eerste-website-10-tips-voor-starters", "destination": "/blog/je-eerste-website-10-tips-voor-starters/", "statusCode": 301 },
+    { "source": "/je-eerste-website-10-tips-voor-starters/", "destination": "/blog/je-eerste-website-10-tips-voor-starters/", "statusCode": 301 },
+    { "source": "/nieuw-leuk-project-gerealiseerd-routes-op-je-smartphone", "destination": "/blog/nieuw-leuk-project-gerealiseerd-routes-op-je-smartphone/", "statusCode": 301 },
+    { "source": "/6-voordelen-van-een-e-mailcampagne-voor-je-kmo", "destination": "/blog/6-voordelen-van-een-e-mailcampagne-voor-je-kmo/", "statusCode": 301 },
+    { "source": "/6-voordelen-van-een-e-mailcampagne-voor-je-kmo/", "destination": "/blog/6-voordelen-van-een-e-mailcampagne-voor-je-kmo/", "statusCode": 301 },
+    { "source": "/blogabonnement-blogdienst", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/blogabonnement-blogdienst/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/wat-houdt-de-prijs-van-webdesign-in", "destination": "/blog/wat-houdt-de-prijs-van-webdesign-in/", "statusCode": 301 },
+    { "source": "/wat-houdt-de-prijs-van-webdesign-in/", "destination": "/blog/wat-houdt-de-prijs-van-webdesign-in/", "statusCode": 301 },
+    { "source": "/10-aandachtspunten-onderhoudscontracten", "destination": "/blog/10-aandachtspunten-onderhoudscontracten/", "statusCode": 301 },
+    { "source": "/10-aandachtspunten-onderhoudscontracten/", "destination": "/blog/10-aandachtspunten-onderhoudscontracten/", "statusCode": 301 },
+    { "source": "/instructiefilmpjes", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/instructiefilmpjes/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/category/blog", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/category/blog/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/category/:path*", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/portfolio/flowergy", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/leesen-bouw", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/two-move-kinesitherapie", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/mka-hasselt", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/tennisclub-de-alk", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/musea-sculpta", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/plutex", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/christel-merckx", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/vosters-textiel", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/kermis-in-limburg", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/wild-at-home", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/voets-wysmans-adviesgroep", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/bar-leuv", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/pikir-coaching", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/huyghen-en-van-ende", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/cest-duvet", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/sane-thermen", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/vera-icon", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/the-agent", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/bloemen-henrioulle", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/grow-pirate", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/tricolor", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/limburgs-volkskundig-genootschap", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/heat-resistant-paints-be", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/motos-goossens", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/lumo-decor", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/parkoers", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/curve-o", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/apac", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/plp-coatings", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/sarah-belwriting", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/rising-heart", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/klusser-mario", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/m-advocaten", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/wopa-saving-energy", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/headfonia", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/anz-geel", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/portfolio/:path*", "destination": "/portfolio/", "statusCode": 301 },
+    { "source": "/privacybeleid", "destination": "/privacybeleid/", "statusCode": 301 },
+    { "source": "/contact-formulier", "destination": "/contact/", "statusCode": 301 },
+    { "source": "/contact-formulier/", "destination": "/contact/", "statusCode": 301 },
+    { "source": "/author/:path*", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/tag/:path*", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/feed", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/feed/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/wp-content/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/wp-admin", "destination": "/", "statusCode": 301 },
+    { "source": "/wp-login.php", "destination": "/", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/style.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
+}
