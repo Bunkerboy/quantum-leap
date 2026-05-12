@@ -12,6 +12,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;ali
 .nl img{height:32px}
 .nk{display:flex;gap:2rem;list-style:none}.nk a{font-size:.85rem;color:var(--txm);transition:color .2s}.nk a:hover{color:var(--tx)}
 .nc{font-size:.82rem;font-weight:600;padding:.5rem 1.2rem;border-radius:6px;background:var(--g);color:#fff;box-shadow:0 0 20px rgba(34,197,94,.2);transition:all .2s}.nc:hover{background:var(--gl);box-shadow:0 0 28px rgba(34,197,94,.35)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--tx);border-radius:2px;transition:all .3s}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* ═══ TYPOGRAPHY ═══ */
 .lb{font-family:var(--fm);font-size:.7rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem}.lb::before{content:'//';color:rgba(167,139,250,.4);font-size:.65rem}
@@ -129,7 +134,10 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
   .d-bento,.g-row,.t-grid,.b-grid{grid-template-columns:1fr}.dc-wide .inner{grid-template-columns:1fr}
   .p-grid{columns:2}.stats-inner{flex-direction:column;gap:2rem}
   .team,.cr{grid-template-columns:1fr}.fi{grid-template-columns:1fr;gap:2rem}
-  .nk{display:none}.t-card:nth-child(2){transform:none}
+  .nk{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(10,10,32,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;padding:1.5rem var(--pad);gap:1rem;border-bottom:1px solid var(--bd)}
+  .nk.open{display:flex}
+  .menu-toggle{display:flex}
+  .t-card:nth-child(2){transform:none}
 }
 
 /* ═══ SERVICE PAGES ═══ */
