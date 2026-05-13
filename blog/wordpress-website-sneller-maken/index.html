@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>WordPress Website Sneller Maken: Van Grade F naar 82% Sneller | Quantum Leap</title>
+<meta name="description" content="Hoe wij headfonia.com van een GTmetrix F-score en 2.52s laadtijd naar 461ms brachten in één dag. Eerlijk verslag met echte data en screenshots."/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/wordpress-website-sneller-maken/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="WordPress Website Sneller Maken: 82% Sneller in Eén Dag"/>
+<meta property="og:description" content="Van GTmetrix F naar C71, laadtijd van 2.52s naar 461ms. Eerlijk verslag met echte screenshots."/>
+<meta property="article:published_time" content="2026-05-13"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WordPress Website Sneller Maken: Van Grade F naar 82% Sneller in Eén Dag","author":{"@type":"Person","name":"Kristof Loyens","image":"https://www.quantum-leap.be/img/authors/kristof-loyens.jpg"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-13","description":"Case study: headfonia.com van 2.52s naar 461ms laadtijd."}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">SPEED</div>
+  <div class="orb orb-g" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-p" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>WordPress sneller maken</span></nav>
+  <p class="lb">// Performance · Case study</p>
+  <h1><span class="sm">Case: Headfonia.com</span>Van GTmetrix <span class="gr">F</span> naar<br><span class="outline">82% sneller</span></h1>
+  <p class="sub">Een eerlijk verslag van een dag speed-optimalisatie. Wat we vonden, wat we fixten, wat de site even kapotmaakte — en de concrete resultaten met echte screenshots.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 13 mei 2026 · 8 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <!-- RESULT SUMMARY -->
+  <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin-bottom:3rem">
+    <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--bd);font-family:var(--fm);font-size:.7rem;color:var(--txm);text-transform:uppercase;letter-spacing:.1em">// Resultaat in één dag</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd)">
+      <div style="background:var(--n2);padding:1.5rem;text-align:center"><p style="font-family:var(--fd);font-size:2.8rem;color:var(--g);line-height:1">82%</p><p style="font-size:.75rem;color:var(--txm);margin-top:.3rem">Snellere laadtijd</p></div>
+      <div style="background:var(--n2);padding:1.5rem;text-align:center"><p style="font-family:var(--fd);font-size:2.8rem;color:#fff;line-height:1">461<span style="font-size:1.2rem">ms</span></p><p style="font-size:.75rem;color:var(--txm);margin-top:.3rem">Laadtijd (was 2.52s)</p></div>
+      <div style="background:var(--n2);padding:1.5rem;text-align:center"><p style="font-family:var(--fd);font-size:2.8rem;color:#fff;line-height:1">D→C</p><p style="font-size:.75rem;color:var(--txm);margin-top:.3rem">Pingdom grade</p></div>
+    </div>
+  </div>
+
+  <p style="font-size:1.05rem;color:var(--tx);line-height:1.8"><a href="https://www.headfonia.com" target="_blank" style="color:var(--g)">Headfonia.com</a> is een van de grotere audiofiele reviewsites wereldwijd — duizenden artikelen, veel afbeeldingen, display-advertenties, en miljoenen bezoekers per maand. De eigenaar had al gemerkt dat de site traag aanvoelde. Toen ik GTmetrix opende, crashte het testplatform letterlijk. Tijd om in te grijpen.</p>
+
+  <h2>De <em>diagnose</em></h2>
+
+  <p>De eerste GTmetrix-test was onthutsend:</p>
+
+  <img src="img/gtmetrix-before.jpeg" alt="GTmetrix rapport headfonia.com — Grade F, Performance 39%" loading="lazy" style="border-radius:var(--r);margin:1.5rem 0;border:1px solid var(--bd)" />
+
+  <p><strong>GTmetrix Grade F. Performance 39%. En op mobiel zelfs maar 25%.</strong> De site was functioneel, maar onder de motorkap was het een puinhoop. Hier zijn de concrete problemen die we vonden:</p>
+
+  <h3>8.370 milliseconden render-blocking resources</h3>
+  <p>Alleen al de first-party bestanden van headfonia.com blokkeerden het renderen voor meer dan 8 seconden. Dat betekent: de bezoeker staart naar een wit scherm terwijl de browser CSS- en JS-bestanden aan het downloaden is die niet eens nodig zijn voor de eerste weergave.</p>
+
+  <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin:1.5rem 0">
+    <div style="padding:.75rem 1.25rem;border-bottom:1px solid var(--bd);font-family:var(--fm);font-size:.68rem;color:#ef4444;letter-spacing:.08em">⚠ RENDER-BLOCKING RESOURCES — 8.370ms totaal</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.82rem">
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.5rem 1.25rem;color:var(--txm)">CSS-bestanden (theme + plugins)</td><td style="padding:.5rem;color:var(--tx);text-align:right;font-family:var(--fm);font-size:.75rem">~85 KiB</td><td style="padding:.5rem 1.25rem;color:#ef4444;text-align:right;font-family:var(--fm);font-size:.75rem">5.890 ms</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.5rem 1.25rem;color:var(--txm)">JavaScript-bestanden (jQuery + plugins)</td><td style="padding:.5rem;color:var(--tx);text-align:right;font-family:var(--fm);font-size:.75rem">~70 KiB</td><td style="padding:.5rem 1.25rem;color:#ef4444;text-align:right;font-family:var(--fm);font-size:.75rem">1.730 ms</td></tr>
+      <tr><td style="padding:.5rem 1.25rem;color:var(--txm)">Google Fonts (extern)</td><td style="padding:.5rem;color:var(--tx);text-align:right;font-family:var(--fm);font-size:.75rem">1.6 KiB</td><td style="padding:.5rem 1.25rem;color:#ef4444;text-align:right;font-family:var(--fm);font-size:.75rem">750 ms</td></tr>
+    </table>
+  </div>
+
+  <p>Meer dan 15 afzonderlijke CSS- en JS-bestanden werden render-blocking geladen — theme-stylesheets, plugin-scripts, een verouderde jQuery-versie met jQuery Migrate, en extern gehoste Google Fonts. Geen van deze bestanden was nodig voor de initiële weergave van de pagina.</p>
+
+  <h3>Dubbele Google Tag Manager containers</h3>
+
+  <p>Er draaiden twee GTM-containers op dezelfde site — twee verschillende container-ID's die elk hun eigen set tracking-scripts laadden. Samen goed voor 617.9 KiB aan scripts — waarvan 301.9 KiB pure overhead. Eén container was voldoende.</p>
+
+  <h3>Google Tag Manager + advertenties = zware JS-payload</h3>
+  <p>De GTM-scripts (617.9 KiB) plus het advertentienetwerk (233.7 KiB) domineerden de JavaScript-payload. Scripts waren goed voor meer dan 20% van de totale paginagrootte — 651 KB aan JavaScript.</p>
+
+  <h3>Object Cache uitgeschakeld</h3>
+
+  <p>De server had Object Cache Pro geïnstalleerd, maar Redis stond <strong>uitgeschakeld</strong>. Dat betekent dat elke pageload de database opnieuw bevraagt in plaats van uit cache te serveren — gratis performance die op tafel lag.</p>
+
+  <h3>jQuery Migrate waarschuwingen</h3>
+  <p>De browser console toonde tientallen jQuery Migrate-waarschuwingen. Dat wijst op verouderde plugin-code die nog afhankelijk is van een oudere jQuery-versie — extra JavaScript dat meegeladen wordt zonder dat het nodig is.</p>
+
+  <h3>Publiek toegankelijke database-back-ups — beveiligingslek</h3>
+  <p>Bij het doorlopen van de server vonden we iets dat niets met snelheid te maken heeft maar minstens zo belangrijk is: <strong>oude database-back-ups die publiek toegankelijk waren</strong>. Dit soort bestanden horen nooit in een publieke map te staan. Direct verwijderd en de eigenaar geïnformeerd.</p>
+
+  <h2>Wat we <em>gedaan</em> hebben</h2>
+
+  <h3>Stap 1: Cloudflare + Cloudways caching hersteld</h3>
+  <p>De <a href="/hosting/" style="color:var(--g)">Cloudways-server</a> stond achter Cloudflare, maar de caching-configuratie was niet optimaal. Van de 8.85 miljoen requests in de afgelopen week werd 38% door de origin server bediend in plaats van uit Cloudflare cache.</p>
+
+  <img src="img/cloudflare-cache.jpeg" alt="Cloudflare cache performance: 8.85M requests, 5.47M served by Cloudflare" loading="lazy" style="border-radius:var(--r);margin:1.5rem 0;border:1px solid var(--bd)" />
+
+  <p>We hebben de cache rules bijgesteld zodat statische content consistent uit Cloudflare wordt geserveerd.</p>
+
+  <h3>Stap 2: Render-blocking resources aanpakken</h3>
+  <ul>
+    <li><strong>Niet-essentiële CSS/JS gedeferred</strong> — poll-plugins, rating-widgets en advertising scripts hoeven niet render-blocking te laden</li>
+    <li><strong>Google Fonts lokaal gehost</strong> — 750ms render-blocking time geëlimineerd</li>
+    <li><strong>Dubbele GTM-container verwijderd</strong> — één container behouden, de andere uitgeschakeld</li>
+  </ul>
+
+  <h3>Stap 3: Afbeeldingen en content</h3>
+  <ul>
+    <li><strong>Afbeeldingen verkleind en gecomprimeerd</strong> — de totale image-payload ging van 80%+ van de pagina naar beheersbaar niveau</li>
+    <li><strong>Artikelen op de homepage verminderd</strong> — minder posts = minder afbeeldingen en scripts per pageload</li>
+    <li><strong>Lazy loading gecontroleerd</strong> — below-the-fold content laadt pas wanneer nodig</li>
+  </ul>
+
+  <h3>Stap 4: Server-side</h3>
+  <ul>
+    <li><strong>Redis Object Cache geactiveerd</strong> — database queries uit cache in plaats van live</li>
+    <li><strong>PHP-versie gecontroleerd</strong></li>
+    <li><strong>Database opgeschoond</strong> — overbodige revisies, transients en spam verwijderd</li>
+    <li><strong>Beveiligingslekken gedicht</strong> — publiek toegankelijke back-upbestanden verwijderd</li>
+  </ul>
+
+  <h3>Wat de site even kapotmaakte</h3>
+  <p>Na de grote verbeteringen probeerde ik ook <strong>JavaScript minificatie</strong> aan te zetten. Had al een aantal bestanden ge-excluded waarvan ik wist dat ze problemen zouden geven. Maar de site ging direct kapot. Binnen seconden meldde de eigenaar: <em>"Oei de site is heel stuk ineens."</em> Direct uitgezet — de site was binnen een minuut terug. Les geleerd: JS minificatie op een bestaande WordPress-site met veel plugins is een mijnenveld. Bestand per bestand testen, niet in bulk.</p>
+
+  <h2>Het <em>resultaat</em></h2>
+
+  <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+    <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--bd);font-family:var(--fm);font-size:.7rem;color:var(--txm);letter-spacing:.1em">// VOOR → NA</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.88rem">
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">Load time</td><td style="padding:.75rem;color:#ef4444;font-weight:600">2.52s</td><td style="padding:.75rem;font-weight:700;color:var(--g)">461ms</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">Page size</td><td style="padding:.75rem;color:var(--txm)">3.2 MB</td><td style="padding:.75rem;color:var(--tx)">2.3 MB</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">Requests</td><td style="padding:.75rem;color:var(--txm)">123</td><td style="padding:.75rem;color:var(--tx)">102</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">Grade</td><td style="padding:.75rem;color:#ef4444">D 66</td><td style="padding:.75rem;color:var(--g);font-weight:600">C 71</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">Field LCP</td><td style="padding:.75rem;color:#ef4444">5.2s</td><td style="padding:.75rem;color:var(--g);font-weight:600">3.2s</td></tr>
+      <tr style="border-bottom:1px solid var(--bd)"><td style="padding:.75rem 1.5rem;color:var(--txm)">GTmetrix</td><td style="padding:.75rem;color:#ef4444;font-weight:600">Crashed</td><td style="padding:.75rem;color:var(--g);font-weight:600">Loads fine</td></tr>
+      <tr><td style="padding:.75rem 1.5rem;color:var(--txm)">Security</td><td style="padding:.75rem;color:#ef4444">Publieke back-ups gevonden</td><td style="padding:.75rem;color:var(--g);font-weight:600">Opgeruimd</td></tr>
+    </table>
+  </div>
+
+  <p><strong>Dat is een reductie van 82% in laadtijd. In één dag werk.</strong></p>
+
+  <h2>Pingdom <em>wereldwijd</em> — de echte test</h2>
+  <p>Headfonia.com heeft lezers over de hele wereld. Dus testten we vanuit vier Pingdom-locaties om te zien hoe Cloudflare's edge caching presteert:</p>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0">
+    <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);padding:1.25rem;text-align:center">
+      <p style="font-size:.72rem;color:var(--txm);font-family:var(--fm);margin-bottom:.5rem">FRANKFURT 🇩🇪</p>
+      <p style="font-family:var(--fd);font-size:2rem;color:var(--g)">564ms</p>
+      <p style="font-size:.75rem;color:var(--txm)">C 71 · 2.0 MB</p>
+    </div>
+    <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);padding:1.25rem;text-align:center">
+      <p style="font-size:.72rem;color:var(--txm);font-family:var(--fm);margin-bottom:.5rem">WASHINGTON D.C. 🇺🇸</p>
+      <p style="font-family:var(--fd);font-size:2rem;color:var(--g)">771ms</p>
+      <p style="font-size:.75rem;color:var(--txm)">C 71 · 2.0 MB</p>
+    </div>
+    <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);padding:1.25rem;text-align:center">
+      <p style="font-size:.72rem;color:var(--txm);font-family:var(--fm);margin-bottom:.5rem">SYDNEY 🇦🇺</p>
+      <p style="font-family:var(--fd);font-size:2rem;color:var(--tx)">1.67s</p>
+      <p style="font-size:.75rem;color:var(--txm)">D 70 · 2.0 MB</p>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(34,197,94,.08),var(--n2));border:1px solid rgba(34,197,94,.25);border-radius:var(--r);padding:1.25rem;text-align:center;box-shadow:0 0 20px rgba(34,197,94,.06)">
+      <p style="font-size:.72rem;color:var(--g);font-family:var(--fm);margin-bottom:.5rem">TOKYO 🇯🇵</p>
+      <p style="font-family:var(--fd);font-size:2rem;color:var(--g)">119ms</p>
+      <p style="font-size:.75rem;color:var(--g);font-weight:600">A 97 · 78.4 KB · 3 requests</p>
+    </div>
+  </div>
+
+  <img src="img/pingdom-tokyo.jpeg" alt="Pingdom Tokyo: A 97, 119ms, 78.4 KB, 3 requests" loading="lazy" style="border-radius:var(--r);margin:1rem 0;border:1px solid rgba(34,197,94,.2)" />
+
+  <p>Die Tokyo-score moest ik twee keer checken. <strong>A 97. 119 milliseconden. 78.4 KB. 3 requests.</strong> Cloudflare's Tokyo edge node serveerde de volledige pagina uit cache — de origin server in Europa werd niet eens aangesproken. Vanuit Frankfurt en Washington haalde de site ook goede tijden. Sydney is logisch wat trager door de afstand, maar alsnog acceptabel.</p>
+
+  <h2>Core Web Vitals — <em>de lange termijn</em></h2>
+
+  <img src="img/crux-vitals.jpeg" alt="CrUX Core Web Vitals headfonia.com — Interactivity good, Visual Stability improving" loading="lazy" style="border-radius:var(--r);margin:1.5rem 0;border:1px solid var(--bd)" />
+
+  <p>De Chrome User Experience Report (CrUX) toont de echte gebruikersdata over tijd. Per 2 mei 2026:</p>
+  <ul>
+    <li><strong>Loading Performance</strong> — "needs improvement", maar stabiel en dalend. De LCP was eerder diep in het oranje, nu aan het zakken richting de groene zone.</li>
+    <li><strong>Interactivity (INP)</strong> — "good and stable" ✅</li>
+    <li><strong>Visual Stability (CLS)</strong> — "good and improving" ✅</li>
+  </ul>
+  <p>Twee van de drie Core Web Vitals scoren nu goed. De LCP-verbetering is zichtbaar in de trend maar heeft nog enkele weken nodig om volledig door te werken in de CrUX-data — het is immers een <strong>rolling average van 28 dagen</strong>. De verwachting is dat ook Loading Performance naar "good" gaat na de volledige datacyclus.</p>
+
+  <h2>Wat er nog <em>overblijft</em></h2>
+  <p>De site is enorm verbeterd, maar er is nog ruimte:</p>
+  <ul>
+    <li><strong>Pingdom toont nog een F-score op HTTP requests (112) en Expires headers</strong> — het aantal requests kan nog verder omlaag door CSS/JS te bundelen</li>
+    <li><strong>Gzip-compressie stond op F 12</strong> — dit moet op serverniveau correct geconfigureerd worden</li>
+    <li><strong>JS minificatie</strong> — moet voorzichtig per bestand getest worden op een staging-omgeving</li>
+    <li><strong>PageSpeed Insights Core Web Vitals</strong> — de officiële scores verbeteren pas na 28 dagen (rolling average). We evalueren opnieuw na 4-6 weken.</li>
+  </ul>
+
+  <h2>Wat we <em>geleerd</em> hebben</h2>
+  <ul>
+    <li><strong>GTmetrix die crasht is een diagnose op zich</strong> — als het testplatform je site niet aankan, kan je bezoeker dat ook niet</li>
+    <li><strong>Dubbele GTM-containers zijn een stille killer</strong> — ze laden dubbel zoveel tracking-scripts zonder dat iemand het merkt</li>
+    <li><strong>Object Cache uitgeschakeld laten is gratis performance weggooien</strong> — Redis stond letterlijk klaar maar was niet geactiveerd</li>
+    <li><strong>Beveiligingsaudits horen bij performance-audits</strong> — publiek toegankelijke back-upbestanden vinden was niet het doel, maar wel het belangrijkste resultaat van de dag</li>
+    <li><strong>JS minificatie op een live site = gevaarlijk</strong> — altijd op staging testen, nooit in bulk</li>
+    <li><strong>Geduld met Google</strong> — PageSpeed Insights toont een rolling average van 28 dagen. De echte impact zie je pas weken later in Search Console.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <h3>Trage WordPress-site?</h3>
+    <p>Wij analyseren uw site gratis en vertellen u exact waar de bottlenecks zitten — en wat het kost om ze op te lossen. Geen verplichtingen.</p>
+    <a href="/contact/" class="btn bp">Gratis speed-analyse aanvragen →</a>
+  </div>
+
+  <h2>Gerelateerde <em>artikelen</em></h2>
+  <div class="related">
+    <a href="/blog/http-error-500/" class="related-card"><h3>HTTP 500 Fout Oplossen</h3><p>Stap-voor-stap gids voor server errors.</p><span class="arrow">Lees meer →</span></a>
+    <a href="/hosting/" class="related-card"><h3>Hosting</h3><p>Snelle, betrouwbare hosting met monitoring.</p><span class="arrow">Meer over hosting →</span></a>
+    <a href="/wordpress-hasselt/" class="related-card"><h3>WordPress Hasselt</h3><p>WordPress-sites die snel en veilig zijn.</p><span class="arrow">Meer over WordPress →</span></a>
+  </div>
+
+  <div style="background:var(--n2);border-radius:var(--r);padding:1.5rem;margin-top:3rem;display:flex;gap:1rem;align-items:flex-start">
+    <img src="/img/authors/kristof-loyens.jpg" width="992" height="1056" loading="lazy" decoding="async" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0" alt="Kristof Loyens"/>
+    <div>
+      <p style="font-weight:600;font-size:.92rem;margin-bottom:.15rem">Kristof Loyens</p>
+      <p style="font-size:.82rem;color:var(--txm)">Eigenaar Quantum Leap. 20+ jaar ervaring in webdesign en performance-optimalisatie. Maakt ook een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--bd)">
+    <a href="/blog/" style="color:var(--g);font-size:.88rem">← Terug naar alle blogberichten</a>
+  </p>
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/hosting/">Hosting</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><span>FB · LI</span></div></footer>
+</body></html>
