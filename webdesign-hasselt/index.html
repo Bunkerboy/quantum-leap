@@ -12,14 +12,12 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Webdesign Hasselt","provider":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"areaServed":{"@type":"City","name":"Hasselt"},"description":"Professioneel webdesign op maat in Hasselt en Limburg.","url":"https://www.quantum-leap.be/webdesign-hasselt/"}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="/style.css?v=2"/>
 </head>
 <body>
 <nav>
-  <a href="/" class="nl"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap"/></a>
+  <a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" width="253" height="61" fetchpriority="high"/></a>
   <ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul>
   <a href="/contact/" class="nc">Contacteer ons</a>
   <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nk').classList.toggle('open');this.classList.toggle('active')"><span></span><span></span><span></span></button>
@@ -71,7 +69,7 @@
 </main>
 <footer>
   <div class="fi">
-    <div class="fc"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div>
+    <div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" width="253" height="61" loading="lazy" decoding="async" style="height:28px;width:auto;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div>
     <div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a><a href="/hosting/">Hosting</a><a href="/email-marketing/">E-mailmarketing</a></div>
     <div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div>
   </div>
