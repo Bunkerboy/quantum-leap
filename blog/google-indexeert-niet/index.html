@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Google Indexeert Mijn Site Niet? Oplossen in 20 min [2026] — Quantum Leap</title>
+<meta name="description" content="Uw site staat niet in Google? In 90% van de gevallen ligt het aan een noindex-instelling of ontbrekende sitemap. In 20 minuten opgelost via Google Search Console."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/google-indexeert-niet/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/google-indexeert-niet/"/>
+<meta property="og:title" content="Google Indexeert Mijn Site Niet? Oplossen in 20 min [2026]"/>
+<meta property="og:description" content="Site niet zichtbaar in Google? Noindex-instelling of ontbrekende sitemap zijn de meest voorkomende oorzaken. Stap-voor-stap oplossing."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Indexeert Mijn Site Niet? Oplossen in 20 min [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"Stap-voor-stap gids om te achterhalen waarom Google uw site niet indexeert en hoe u het oplost.","url":"https://www.quantum-leap.be/blog/google-indexeert-niet/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-g" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-p" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>Google indexeert niet</span></nav>
+  <p class="lb">// SEO · Google Search Console · Indexering</p>
+  <h1><em>Google indexeert</em><br><span class="outline">mijn site niet</span></h1>
+  <p class="sub">U bent online maar onzichtbaar in Google. Dat klinkt als een groot probleem, maar in 90% van de gevallen zit de oorzaak op één plek — en is hij in 20 minuten opgelost.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 5 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>Uw website verschijnt niet in Google-zoekresultaten</h2>
+        <p>Bij nieuwe sites, na een heropbouw, of plotseling na een WordPress-update of migratie</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>Een <code>noindex</code>-tag of instelling blokkeert Google actief, <code>robots.txt</code> verbiedt crawlen, of de sitemap is nooit ingediend bij Google Search Console.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>Schakel de noindex-instelling uit in WordPress, controleer <code>robots.txt</code>, dien uw sitemap in via Google Search Console en vraag indexering aan.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Technisch opgelost in ~20 minuten (Google heeft daarna 1–14 dagen)</span>
+      <a href="/contact/" class="fix-cta">Wij regelen het voor €80 →</a>
+    </div>
+  </div>
+
+  <h2>Snel controleren: staat uw site wél in Google?</h2>
+
+  <p>Type in Google: <code>site:uwdomein.be</code>. Verschijnen er resultaten? Dan is uw site geïndexeerd — het probleem is dan mogelijk dat u op de verkeerde zoekwoorden zoekt of dat uw rankings laag zijn. Verschijnen er geen resultaten? Dan is uw site effectief niet geïndexeerd en begint u best met stap 1.</p>
+
+  <table>
+    <thead><tr><th>Symptoom</th><th>Meest waarschijnlijke oorzaak</th></tr></thead>
+    <tbody>
+      <tr><td>Nooit geïndexeerd geweest</td><td>Noindex-instelling actief tijdens bouw, sitemap niet ingediend</td></tr>
+      <tr><td>Plotseling verdwenen uit Google</td><td>Noindex per ongeluk aangezet, site gehackt, handmatige penalty</td></tr>
+      <tr><td>Sommige pagina's indexeert, andere niet</td><td>Canonicaltag fout, pagina uitgesloten in sitemap, dunne content</td></tr>
+      <tr><td>Site is pas online</td><td>Google heeft gewoon nog tijd nodig (1–4 weken normaal)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Controleer de WordPress "noindex"-instelling</h3>
+        <p>Dit is de meest voorkomende oorzaak en het meest over het hoofd geziene instelling. Ga naar <strong>Instellingen → Leesbaarheid</strong> in uw WordPress-dashboard. Zoek de optie <strong>"Zoekmachines ontmoedigen deze site te indexeren"</strong>. Als dit vakje aangevinkt is: zet het uit en sla op. Dit was standaard aangevinkt tijdens de ontwikkeling van uw site en werd vergeten uit te zetten bij livegang.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>Controleer robots.txt op blokkerende regels</h3>
+        <p>Surf naar <code>uwdomein.be/robots.txt</code>. Ziet u hier <code>Disallow: /</code> onder <code>User-agent: *</code>? Dan verbiedt u alle zoekmachines om uw site te crawlen. Verwijder of pas deze regel aan. De standaard en veilige versie voor een publieke WordPress-site is:</p>
+        <p><code>User-agent: *</code><br/><code>Disallow:</code><br/><code>Sitemap: https://uwdomein.be/sitemap.xml</code></p>
+        <p>In WordPress beheert u robots.txt via een SEO-plugin (Yoast, Rank Math) of via uw hostingpanel.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>Maak en activeer een XML-sitemap</h3>
+        <p>Een sitemap is een bestand dat Google vertelt welke pagina's uw site bevat. Yoast SEO en Rank Math genereren dit automatisch op <code>uwdomein.be/sitemap_index.xml</code>. Is dit nog niet actief? Installeer Yoast SEO (gratis) en activeer de sitemap via <strong>Yoast SEO → Instellingen → Functies</strong>.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>Dien uw sitemap in via Google Search Console</h3>
+        <p>Maak een account aan op <strong>Google Search Console</strong> (gratis) en voeg uw domein toe. Bevestig het eigenaarschap via de aanbevolen methode (HTML-bestand of DNS-record). Ga daarna naar <strong>Sitemaps</strong> en voer de URL van uw sitemap in: <code>sitemap_index.xml</code>. Google begint uw site nu actief te crawlen.</p>
+        <p>Nog geen Search Console? Dit is hoe dan ook een must-have voor elke websiteeigenaar — u ziet er ook welke zoekwoorden bezoekers naar uw site brengen en welke technische fouten Google vindt.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Vraag indexering aan via URL-inspectietool</h3>
+        <p>In Google Search Console: ga naar <strong>URL-inspectie</strong> en voer uw homepage-URL in. Google controleert de live versie van uw pagina. Klik op <strong>"Indexering aanvragen"</strong>. Doe dit ook voor uw belangrijkste pagina's. Google geeft prioriteit aan aangevraagde URL's — doorgaans geïndexeerd binnen 24–72 uur.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Google indexeren duurt altijd even, ook als alles correct staat. Een nieuwe site krijgt doorgaans 1 tot 4 weken voor de eerste indexering. Aanvragen via de URL-inspectietool versnelt dit, maar geeft geen garantie op een snelle ranking.</p>
+  </div>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+  <ul>
+    <li>Uw site was geïndexeerd maar is plots verdwenen — dat kan wijzen op een handmatige penalty van Google of een hack.</li>
+    <li>Google Search Console toont <a href="/blog/http-error-500/" style="color:var(--g)">server­fouten</a> of crawlproblemen die u niet herkent.</li>
+    <li>U wilt niet alleen geïndexeerd worden, maar ook ranken — dat vraagt een doordachte <a href="/seo-hasselt/" style="color:var(--g)">SEO-strategie</a>.</li>
+    <li>Uw site heeft canonical-tag-problemen of dubbele content die indexering bemoeilijkt.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Onzichtbaar in Google is misgelopen omzet. <a href="/contact/" style="color:var(--g)">Contacteer ons</a> — technische SEO-audit en indexeringsfix voor €80.</p>
+  </div>
+
+  <div class="related">
+    <a href="/seo-hasselt/" class="related-card">
+      <span class="related-icon">🔍</span>
+      <div><h4>SEO Hasselt</h4><p>Van technisch correct naar bovenaan in Google — duurzame SEO voor KMO's.</p></div>
+    </a>
+    <a href="/blog/wordpress-gehackt/" class="related-card">
+      <span class="related-icon">🔐</span>
+      <div><h4>WordPress site gehackt</h4><p>Een gehackte site verdwijnt snel uit Google. Zo herstelt u de situatie.</p></div>
+    </a>
+    <a href="/wordpress-hasselt/" class="related-card">
+      <span class="related-icon">⚙️</span>
+      <div><h4>WordPress Hasselt</h4><p>WordPress-sites die technisch correct staan én vindbaar zijn in Google.</p></div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar">KL</div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><span>FB · LI</span></div></footer>
+</body></html>
