@@ -27,7 +27,7 @@ h1 .outline{-webkit-text-stroke:1.5px var(--tx);-webkit-text-fill-color:transpar
 h1 span.gr{background:linear-gradient(135deg,var(--g),var(--gl),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:-.02em}
 h2 em{font-style:normal;font-weight:300;color:var(--txm)}
 h3{font-size:1.1rem;font-weight:600}
-.watermark{position:absolute;font-family:var(--fd);font-size:clamp(6rem,15vw,12rem);color:rgba(255,255,255,.015);pointer-events:none;letter-spacing:.05em;line-height:1;white-space:nowrap;z-index:0}
+.watermark{position:absolute;font-family:var(--fd);font-size:clamp(6rem,15vw,12rem);color:rgba(255,255,255,.015);pointer-events:none;letter-spacing:.05em;line-height:1;white-space:nowrap;z-index:0;max-width:none}
 .sub{font-size:1rem;color:var(--txm);max-width:480px;margin-top:.7rem}
 .btn{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--f);font-weight:600;font-size:.88rem;padding:.75rem 1.6rem;border-radius:8px;border:none;cursor:pointer;transition:all .25s}
 .bp{background:var(--g);color:#fff;box-shadow:0 0 20px rgba(34,197,94,.2)}.bp:hover{background:var(--gl);transform:translateY(-2px);box-shadow:0 4px 28px rgba(34,197,94,.35)}
@@ -147,7 +147,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 }
 
 /* ═══ SERVICE PAGES ═══ */
-.page-hero{padding:calc(64px + 4rem) var(--pad) 3rem;max-width:var(--mx);margin:0 auto;position:relative;overflow:hidden}
+.page-hero{padding:calc(64px + 4rem) var(--pad) 3rem;max-width:var(--mx);margin:0 auto;position:relative;overflow:visible}
 .breadcrumb{font-family:var(--fm);font-size:.7rem;color:var(--txm);margin-bottom:1.5rem;display:flex;gap:.5rem;align-items:center}
 .breadcrumb a{color:var(--txm);transition:color .2s}.breadcrumb a:hover{color:var(--g)}
 .breadcrumb span{color:rgba(167,139,250,.4)}
@@ -161,6 +161,8 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
 .related-card{background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;transition:border-color .2s,transform .2s}
 .related-card:hover{border-color:rgba(34,197,94,.2);transform:translateY(-3px)}
+.service-card-icon{width:34px;height:34px;margin-bottom:.9rem;display:block;color:#5b8bd7}
+.service-card-icon svg{width:100%;height:100%;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .related-card h3{color:#fff;font-size:1rem;margin-bottom:.4rem}.related-card p{font-size:.82rem;color:var(--txm);margin:0}
 .related-card .arrow{font-size:.82rem;color:var(--g);margin-top:.75rem;display:block}
 .cta-inline{background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(167,139,250,.05));border:1px solid rgba(34,197,94,.15);border-radius:var(--r);padding:2rem;margin:3rem 0;text-align:center}

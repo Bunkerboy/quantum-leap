@@ -48,7 +48,7 @@ h1 .outline{-webkit-text-stroke:1.5px var(--tx);-webkit-text-fill-color:transpar
 h1 span.gr{background:linear-gradient(135deg,var(--g),var(--gl),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:-.02em}
 h2 em{font-style:normal;font-weight:300;color:var(--txm)}
 h3{font-size:1.1rem;font-weight:600}
-.watermark{position:absolute;font-family:var(--fd);font-size:clamp(6rem,15vw,12rem);color:rgba(255,255,255,.015);pointer-events:none;letter-spacing:.05em;line-height:1;white-space:nowrap;z-index:0}
+.watermark{position:absolute;font-family:var(--fd);font-size:clamp(6rem,15vw,12rem);color:rgba(255,255,255,.015);pointer-events:none;letter-spacing:.05em;line-height:1;white-space:nowrap;z-index:0;max-width:none}
 .sub{font-size:1rem;color:var(--txm);max-width:480px;margin-top:.7rem}
 .btn{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--f);font-weight:600;font-size:.88rem;padding:.75rem 1.6rem;border-radius:8px;border:none;cursor:pointer;transition:all .25s}
 .bp{background:var(--g);color:#fff;box-shadow:0 0 20px rgba(34,197,94,.2)}.bp:hover{background:var(--gl);transform:translateY(-2px);box-shadow:0 4px 28px rgba(34,197,94,.35)}
@@ -171,7 +171,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 <body>
 
 <nav>
-  <a href="/" class="nl"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap" /></a>
+  <a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" /></a>
   <ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul>
   <a href="/contact/" class="nc">Contacteer ons</a>
   <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button>
@@ -208,7 +208,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 </div>
 
 <!-- ═══ DIENSTEN ═══ -->
-<section id="diensten" class="sec" style="position:relative;overflow:hidden">
+<section id="diensten" class="sec" style="position:relative;overflow:visible">
   <div class="watermark" style="top:-1rem;right:-2rem">SERVICES</div>
   <p class="lb">Wat wij doen</p>
   <h2>Onze <em>diensten</em></h2>
@@ -243,7 +243,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 </section>
 
 <!-- ═══ GARANTIES ═══ -->
-<section id="aanpak" class="sec" style="padding-top:0;position:relative;overflow:hidden">
+<section id="aanpak" class="sec" style="padding-top:0;position:relative;overflow:visible">
   <div class="watermark" style="top:-1rem;left:-2rem">APPROACH</div>
   <p class="lb">Onze aanpak</p><h2>Onze <em>garanties</em></h2>
   <div class="g-row">
@@ -254,7 +254,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 </section>
 
 <!-- ═══ TESTIMONIALS ═══ -->
-<section class="sec" style="position:relative;overflow:hidden">
+<section class="sec" style="position:relative;overflow:visible">
   <div class="watermark" style="bottom:0;right:-3rem">REVIEWS</div>
   <p class="lb">Klanten aan het woord</p><h2>Zij gingen <em>u voor</em></h2>
   <div class="t-grid">
@@ -268,7 +268,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 </section>
 
 <!-- ═══ PORTFOLIO ═══ -->
-<section id="portfolio" class="sec" style="padding-top:0;position:relative;overflow:hidden">
+<section id="portfolio" class="sec" style="padding-top:0;position:relative;overflow:visible">
   <div class="watermark" style="top:-1rem;right:-2rem">WORK</div>
   <p class="lb">Ons werk</p><h2><em>Port</em>folio</h2>
   <div class="p-feat">
@@ -276,30 +276,30 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
     <a href="https://www.mailordo.com" target="_blank" rel="noopener" class="btn bp">Bekijk mailordo.com →</a>
   </div>
   <div class="p-grid">
-    <div class="p-item"><a href="#">Flowergy</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Leesen Bouw</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Praktijk Two Move</a><span>Website</span></div>
-    <div class="p-item"><a href="#">MKA Hasselt</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Tennisclub De Alk</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Musea Sculpta</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Plutex</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Christel Merckx</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Vosters Textiel</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Kermis in Limburg</a><span>Nieuwsbrief</span></div>
-    <div class="p-item"><a href="#">Wild At Home</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Voets–Wysmans</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Bar Leuv</a><span>Website</span></div>
-    <div class="p-item"><a href="#">C'est Duvet</a><span>Webshop</span></div>
-    <div class="p-item"><a href="#">Sane Thermen</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Vera Icon</a><span>Webshop</span></div>
-    <div class="p-item"><a href="#">The Agent</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Grow Pirate</a><span>Website</span></div>
-    <div class="p-item"><a href="#">CURVE-O</a><span>Webshop</span></div>
-    <div class="p-item"><a href="#">Moto's Goossens</a><span>Webshop</span></div>
-    <div class="p-item"><a href="#">PLP Coatings</a><span>Website</span></div>
-    <div class="p-item"><a href="#">M-Advocaten</a><span>Website</span></div>
-    <div class="p-item"><a href="#">Headfonia</a><span>Website</span></div>
-    <div class="p-item"><a href="#">WOPA Saving Energy</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/flowergy/">Flowergy</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/leesen-bouw/">Leesen Bouw</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/two-move-kinesitherapie/">Praktijk Two Move</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/mka-hasselt/">MKA Hasselt</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/tennisclub-de-alk/">Tennisclub De Alk</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/musea-sculpta/">Musea Sculpta</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/plutex/">Plutex</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/christel-merckx/">Christel Merckx</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/vosters-textiel/">Vosters Textiel</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/kermis-in-limburg/">Kermis in Limburg</a><span>Nieuwsbrief</span></div>
+    <div class="p-item"><a href="/portfolio/wild-at-home/">Wild At Home</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/voets-wysmans-adviesgroep/">Voets-Wysmans</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/bar-leuv/">Bar Leuv</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/cest-duvet/">C'est Duvet</a><span>Webshop</span></div>
+    <div class="p-item"><a href="/portfolio/sane-thermen/">Sane Thermen</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/vera-icon/">Vera Icon</a><span>Webshop</span></div>
+    <div class="p-item"><a href="/portfolio/the-agent/">The Agent</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/grow-pirate/">Grow Pirate</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/curve-o/">CURVE-O</a><span>Webshop</span></div>
+    <div class="p-item"><a href="/portfolio/motos-goossens/">Moto's Goossens</a><span>Webshop</span></div>
+    <div class="p-item"><a href="/portfolio/plp-coatings/">PLP Coatings</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/m-advocaten/">M-Advocaten</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/headfonia/">Headfonia</a><span>Website</span></div>
+    <div class="p-item"><a href="/portfolio/wopa-saving-energy/">WOPA Saving Energy</a><span>Website</span></div>
   </div>
 </section>
 
@@ -307,9 +307,9 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 <section id="blog" class="sec" style="padding-top:0">
   <p class="lb">Kennisdeling</p><h2>Laatste blogberichten</h2>
   <div class="b-grid">
-    <article class="b-card"><img class="b-img" src="https://www.quantum-leap.be/wp-content/uploads/2025/06/Google-Mijn-Bedrijf-370x208.webp" alt="Google Mijn Bedrijf" loading="lazy"/><div class="b-body"><span class="b-cat">Bedrijfsstrategie</span><h3>Tips om Mijn Bedrijf in Google optimaal te laten weergeven</h3><p>Een degelijk Google profiel heeft een grote impact op uw vindbaarheid.</p></div><div class="b-foot"><span>Juni 2025</span><a href="/blog/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven/">Lees meer →</a></div></article>
-    <article class="b-card"><img class="b-img" src="https://www.quantum-leap.be/wp-content/uploads/2025/03/Error-500-Server-error-800-x-450-370x208.webp" alt="HTTP Error 500" loading="lazy"/><div class="b-body"><span class="b-cat">Hosting</span><h3>HTTP 500 Fout Oplossen: Stap-voor-Stap Gids</h3><p>Krijgt u een HTTP error 500? Wij leggen uit wat u kunt doen.</p></div><div class="b-foot"><span>Maart 2025</span><a href="/blog/http-error-500/">Lees meer →</a></div></article>
-    <article class="b-card"><img class="b-img" src="https://www.quantum-leap.be/wp-content/uploads/2023/02/1986661172-370x208.png" alt="Website bij overlijden" loading="lazy"/><div class="b-body"><span class="b-cat">Bedrijfsstrategie</span><h3>Wat met je website bij overlijden?</h3><p>Vier concrete tips voor een goede digitale nalatenschap.</p></div><div class="b-foot"><span>Feb 2023</span><a href="/blog/">Lees meer →</a></div></article>
+    <article class="b-card"><img class="b-img" src="/img/blog/google-mijn-bedrijf.webp" alt="Google Mijn Bedrijf profiel optimaliseren" loading="lazy"/><div class="b-body"><span class="b-cat">Bedrijfsstrategie</span><h3>Tips om Mijn Bedrijf in Google optimaal te laten weergeven</h3><p>Een degelijk Google profiel heeft een grote impact op uw vindbaarheid.</p></div><div class="b-foot"><span>Juni 2025</span><a href="/blog/tips-om-mijn-bedrijf-in-google-optimaal-te-laten-weergeven/">Lees meer →</a></div></article>
+    <article class="b-card"><img class="b-img" src="/img/blog/http-500.webp" alt="HTTP Error 500 serverfout" loading="lazy"/><div class="b-body"><span class="b-cat">Hosting</span><h3>HTTP 500 Fout Oplossen: Stap-voor-Stap Gids</h3><p>Krijgt u een HTTP error 500? Wij leggen uit wat u kunt doen.</p></div><div class="b-foot"><span>Maart 2025</span><a href="/blog/http-error-500/">Lees meer →</a></div></article>
+    <article class="b-card"><img class="b-img" src="/img/blog/website-overlijden.webp" alt="Website en digitale nalatenschap bij overlijden" loading="lazy"/><div class="b-body"><span class="b-cat">Bedrijfsstrategie</span><h3>Wat met je website bij overlijden?</h3><p>Vier concrete tips voor een goede digitale nalatenschap.</p></div><div class="b-foot"><span>Feb 2023</span><a href="/blog/">Lees meer →</a></div></article>
   </div>
 </section>
 
@@ -359,7 +359,7 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 
 <footer>
   <div class="fi">
-    <div class="fc"><img src="https://quantum-leap.be/wp-content/uploads/2014/02/quantumleaplogosite.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div>
+    <div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div>
     <div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt">Webdesign Hasselt</a><a href="/seo-hasselt">SEO Hasselt</a><a href="#diensten">AI-toepassingen</a><a href="#diensten">Hosting</a></div>
     <div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a><a href="/privacybeleid">Privacybeleid</a></div>
   </div>
