@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zo vermijd je cookieboetes — Quantum Leap</title>
+<meta name="description" content="De cookieboetes zijn niet min. Hoe zorgt u ervoor dat uw website GDPR-compliant is zonder uw conversies te slopen?"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/zo-vermijd-je-cookieboetes/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/zo-vermijd-je-cookieboetes/"/>
+<meta property="og:title" content="Zo vermijd je cookieboetes"/>
+<meta property="og:description" content="De cookieboetes zijn niet min. Hoe zorgt u ervoor dat uw website GDPR-compliant is zonder uw conversies te slopen?"/>
+<meta property="article:published_time" content="2024-09-22T09:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Zo vermijd je cookieboetes","author":{"@type":"Person","name":"Kristof Loyens","image":"https://www.quantum-leap.be/img/authors/kristof-loyens.webp"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2024-09-22","description":"De cookieboetes zijn niet min. Hoe zorgt u ervoor dat uw website GDPR-compliant is zonder uw conversies te slopen?","url":"https://www.quantum-leap.be/blog/zo-vermijd-je-cookieboetes/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/>
+</head>
+<body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+<article>
+  <header class="article-header">
+    <span class="article-cat">Beveiliging · GDPR · Cookies</span>
+    <h1>Zo vermijd je cookieboetes</h1>
+    <p class="lead">De Belgische Gegevensbeschermingsautoriteit (GBA) deelt al sinds 2021 boetes uit voor onjuist cookiegebruik — en sinds 2023 ook concrete bedragen voor kleine zelfstandigen. Hoe blijft u GDPR-compliant zonder uw conversies te slopen?</p>
+    <p class="article-date">Door Kristof Loyens — 22 september 2024</p>
+  </header>
+
+  <div class="wrap">
+    <img class="article-img" src="/img/blog/cookieboetes.webp" alt="Cookieboetes en GDPR-compliance" loading="lazy"/>
+  </div>
+
+  <div class="article-body">
+
+  <h2>Wat is er precies <em>aan de hand?</em></h2>
+  <p>Cookies die niet strikt noodzakelijk zijn (denk: Google Analytics, Meta Pixel, YouTube embeds, Hotjar) mogen <strong>pas geplaatst worden nadat de bezoeker toestemming heeft gegeven</strong>. Niet ervoor, niet stilzwijgend, niet "door verder te surfen". De GBA heeft hier in 2023 en 2024 stevige boetes voor uitgedeeld — tot €600.000 voor grote spelers en €5.000 tot €20.000 voor KMO's.</p>
+
+  <h2>De 5 fouten die we het <em>meest zien</em></h2>
+  <ul>
+    <li><strong>Google Analytics laadt vóór de cookieconsent</strong> — vrijwel iedere site die we auditen heeft dit. GA4 plaatst bij eerste pageload al cookies; dat mag niet zonder consent.</li>
+    <li><strong>"Door verder te bladeren" als toestemming</strong> — verboden sinds GDPR. Toestemming moet actief en duidelijk zijn.</li>
+    <li><strong>Geen weigeren-knop, of een verstopte weigeren-knop</strong> — een cookiebanner moet "weigeren" even prominent tonen als "accepteren". Verbergen achter "Meer opties" → boete.</li>
+    <li><strong>Cookie-categorieën die al aangevinkt staan</strong> — pre-ticked checkboxes zijn niet geldig als toestemming.</li>
+    <li><strong>Geen logging van consent</strong> — u moet kunnen bewijzen dat een bezoeker toestemming heeft gegeven. Tools als Cookiebot of Iubenda doen dit automatisch.</li>
+  </ul>
+
+  <h2>Praktisch: <em>zo lost u het op</em></h2>
+  <p>Voor de meeste KMO-sites werken wij met een eenvoudige stack:</p>
+  <ul>
+    <li><strong>Cookiebot, Iubenda of CookieYes</strong> als CMP (Consent Management Platform). Vanaf ~€10/maand voor kleine sites.</li>
+    <li><strong>Google Consent Mode v2</strong> ingesteld zodat GA4 alleen meet wanneer er toestemming is. Bonus: u verliest minder data dan een volledige blokkade.</li>
+    <li><strong>Een privacybeleid + cookiebeleid</strong> die door uw advocaat of een GDPR-tool wordt opgesteld — niet een gratis template van internet.</li>
+    <li><strong>Maandelijkse scan</strong> van uw site om te checken welke cookies daadwerkelijk geplaatst worden (browser DevTools → Application → Cookies).</li>
+  </ul>
+
+  <h2>Hoeveel kost dat <em>allemaal?</em></h2>
+  <p>Een eenmalige setup zit voor de meeste KMO-sites tussen €350 en €750. Daarna ongeveer €10–€30/maand voor de CMP-licentie. Een fractie van wat een boete kost — én u behoudt vertrouwen bij uw bezoekers.</p>
+
+  <h3>Wij regelen het voor u</h3>
+  <p>Quantum Leap doet sinds 2018 GDPR-implementaties voor KMO's. Wij kennen de valkuilen en weten welke tools voor welke situatie werken. <a href="/contact/" style="color:var(--g)">Plan een gratis quickscan</a> en we tonen u binnen 30 minuten waar uw site juridisch risico loopt.</p>
+
+
+    <div class="cta-box"><p><strong>Vragen over dit onderwerp?</strong> <a href="/contact/" style="color:var(--g)">Neem contact met ons op</a> — wij denken graag mee voor uw situatie.</p></div>
+
+    <div class="author-box"><div class="avatar"><img src="/img/authors/kristof-loyens-sm.webp" width="128" height="128" loading="lazy" decoding="async" alt="Kristof Loyens"/></div><div><p class="name">Kristof Loyens</p><p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p></div></div>
+
+    <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--bd)">
+      <a href="/blog/" style="color:var(--g);font-size:.88rem">← Terug naar alle blogberichten</a>
+    </p>
+  </div>
+</article>
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><span>FB · LI</span></div></footer>
+</body>
+</html>
