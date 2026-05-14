@@ -185,6 +185,18 @@ footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pa
 .preview-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:1.25rem;background:linear-gradient(180deg,transparent 60%,rgba(10,10,32,.8));opacity:0;transition:opacity .25s}
 .preview-link:hover .preview-overlay{opacity:1}
 .preview-cta{font-family:var(--fm);font-size:.78rem;color:#fff;background:var(--g);padding:.6rem 1rem;border-radius:6px;font-weight:500;letter-spacing:.02em}
+.preview-card{display:flex;flex-direction:column;background:linear-gradient(135deg,var(--n2),var(--n3));border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.4),0 0 0 1px rgba(34,197,94,.05);transition:transform .25s,border-color .25s}
+.preview-card:hover{transform:translateY(-4px);border-color:rgba(34,197,94,.25)}
+.preview-card-bar{display:flex;gap:.4rem;padding:.85rem 1rem;background:rgba(0,0,0,.25);border-bottom:1px solid var(--bd)}
+.preview-card-bar span{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.15)}
+.preview-card-bar span:nth-child(1){background:#ef4444}
+.preview-card-bar span:nth-child(2){background:#f59e0b}
+.preview-card-bar span:nth-child(3){background:#22c55e}
+.preview-card-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative;overflow:hidden}
+.preview-card-watermark{position:absolute;font-family:var(--fd);font-size:clamp(5rem,12vw,10rem);color:rgba(255,255,255,.025);letter-spacing:.05em;line-height:1;white-space:nowrap;pointer-events:none;z-index:0}
+.preview-card-name{font-family:var(--f);font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;margin-bottom:.5rem;position:relative;z-index:1;letter-spacing:-.01em}
+.preview-card-url{font-family:var(--fm);font-size:.85rem;color:var(--gl);margin-bottom:1.5rem;position:relative;z-index:1;word-break:break-all}
+.preview-card-cta{font-family:var(--fm);font-size:.72rem;font-weight:500;color:#fff;background:var(--g);padding:.55rem 1.1rem;border-radius:6px;letter-spacing:.04em;position:relative;z-index:1;box-shadow:0 0 24px rgba(34,197,94,.2)}
 .proj-grid{display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start}
 .proj-text h2:first-child{margin-top:0}
 .proj-info{background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem;position:sticky;top:88px}

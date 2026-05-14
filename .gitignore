@@ -7,3 +7,6 @@ mnt/
 /quantum-leap/
 /quantum-leap.zip
 *.code-workspace
+.venv/
+__pycache__/
+_*.py
