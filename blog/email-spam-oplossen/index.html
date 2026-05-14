@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>E-mail komt in spam terecht? Oplossen in 15 min [2026] — Quantum Leap</title>
+<meta name="description" content="E-mails van uw domein belanden in de spammap? In 15 minuten opgelost met de juiste SPF-, DKIM- en DMARC-records. Stap-voor-stap uitleg."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/email-spam-oplossen/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/email-spam-oplossen/"/>
+<meta property="og:title" content="E-mail komt in spam terecht? Oplossen in 15 min [2026]"/>
+<meta property="og:description" content="SPF, DKIM en DMARC instellen zodat uw e-mails niet langer in spam belanden. Stap-voor-stap in 15 minuten."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"E-mail komt in spam terecht? Oplossen in 15 min [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"SPF, DKIM en DMARC correct instellen zodat e-mails van uw domein niet langer in de spammap belanden.","url":"https://www.quantum-leap.be/blog/email-spam-oplossen/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.quantum-leap.be/blog/email-spam-oplossen/"}}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-g" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-p" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>E-mail in spam</span></nav>
+  <p class="lb">// E-mail · DNS · Eerste hulp</p>
+  <h1><em>E-mail komt in spam</em> —<br><span class="outline">zo lost u het op</span></h1>
+  <p class="sub">Uw klanten vinden uw e-mails niet in hun inbox maar in de spammap. Negen van de tien keer ligt het aan ontbrekende DNS-records. In 15 minuten opgelost.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 5 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>E-mails van uw domein belanden in de spammap</h2>
+        <p>Wanneer u verstuurt vanuit een nieuw domein, na een serververhuizing of na een hostingwissel</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>Ontbrekende of onjuiste DNS-records: SPF, DKIM en/of DMARC zijn niet ingesteld, waardoor ontvangende mailservers uw domein niet vertrouwen.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>Voeg correcte <code>SPF</code>-, <code>DKIM</code>- en <code>DMARC</code>-records toe in de DNS-zone van uw domein. Vervolgens test u met <code>mail-tester.com</code>.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Zelf opgelost in ~15 minuten</span>
+      <a href="/contact/" class="fix-cta">Geen zin? Wij fixen het voor €50 →</a>
+    </div>
+  </div>
+
+  <h2>Waarom belandt mijn e-mail in spam?</h2>
+
+  <p>Moderne mailservers (Gmail, Outlook, …) controleren elke inkomende e-mail op drie DNS-records die bewijzen dat u het recht heeft om e-mail te versturen namens uw domein. Ontbreekt een van de drie, dan gaat de mail linea recta naar spam — of wordt hij stilletjes geweigerd zonder bouncemelding.</p>
+
+  <table>
+    <thead>
+      <tr><th>Record</th><th>Wat het doet</th><th>Zonder dit record</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>SPF</strong></td><td>Verklaart welke servers e-mail mogen versturen voor uw domein</td><td>Mail wordt als verdacht beschouwd</td></tr>
+      <tr><td><strong>DKIM</strong></td><td>Voegt een cryptografische handtekening toe aan elke e-mail</td><td>Ontvangende server kan echtheid niet verifiëren</td></tr>
+      <tr><td><strong>DMARC</strong></td><td>Vertelt mailservers wat ze moeten doen bij een mismatch</td><td>Geen instructie → willekeurige behandeling</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Controleer uw huidige situatie</h3>
+        <p>Surf naar <strong>mail-tester.com</strong>, stuur een testmail naar het adres dat de tool geeft, en bekijk de score. U ziet meteen welke records ontbreken of fout zijn. Een score onder 8/10 betekent dat spam-risico reëel is.</p>
+        <p>Alternatief: gebruik <strong>MXToolbox</strong> (<code>mxtoolbox.com/spf.aspx</code>) — vul uw domein in en het toont onmiddellijk of SPF, DKIM en DMARC aanwezig zijn.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>SPF-record instellen</h3>
+        <p>Log in op het DNS-beheer van uw domein (via uw registrar of hostingpanel). Voeg een <strong>TXT-record</strong> toe op uw rootdomein (<code>@</code>):</p>
+        <p><code>v=spf1 include:_spf.example.com ~all</code></p>
+        <p>Vervang <code>_spf.example.com</code> door de waarde die uw hostingprovider of mailprovider opgeeft. Gebruikt u cPanel-hosting? Dan is het doorgaans <code>include:yourhostingprovider.com</code>. Gebruikt u Google Workspace? Dan is het <code>include:_spf.google.com</code>. Combineert u meerdere mailservers, zet ze dan op één regel met meerdere <code>include:</code> statements — u mag slechts één SPF-record per domein hebben.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>DKIM activeren</h3>
+        <p>DKIM activeert u in het mailbeheer van uw hostingprovider, niet via handmatig een DNS-record invullen. In cPanel gaat u naar <strong>E-mail → E-mail verificatie</strong> en schakelt u DKIM in. Het systeem genereert automatisch een sleutelpaar en plaatst het TXT-record in uw DNS.</p>
+        <p>Gebruikt u Google Workspace of Microsoft 365? Volg dan de DKIM-activatiestap in de beheerconsole van die dienst — zij geven u een waarde die u als TXT-record toevoegt op <code>google._domainkey.uwdomein.be</code>.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>DMARC-record toevoegen</h3>
+        <p>Voeg een <strong>TXT-record</strong> toe op <code>_dmarc.uwdomein.be</code> met als waarde:</p>
+        <p><code>v=DMARC1; p=none; rua=mailto:dmarc@uwdomein.be</code></p>
+        <p>De policy <code>p=none</code> is de veiligste startwaarde — het monitort zonder mails te blokkeren. Na een paar weken kunt u naar <code>p=quarantine</code> of <code>p=reject</code> gaan als alles correct staat. Het <code>rua</code>-adres ontvangt wekelijkse rapporten over hoe uw domein gebruikt wordt.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Wacht op DNS-propagatie en test opnieuw</h3>
+        <p>DNS-wijzigingen hebben 15 minuten tot 24 uur nodig om wereldwijd door te propageren. Wacht minstens 15 minuten en test daarna opnieuw via <strong>mail-tester.com</strong>. Een score van 9 of 10/10 betekent dat uw configuratie klopt.</p>
+        <p>Bereikte score nog steeds laag? Controleer op typfouten in de records — een extra spatie of een punt te veel volstaat om het record ongeldig te maken.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Heeft u meerdere mailproviders tegelijk in gebruik (bijv. cPanel-hosting én een apart mailingplatform)? Zorg dan dat alle verzendende servers in uw SPF-record vermeld staan. Een te restrictief SPF-record (<code>-all</code> in plaats van <code>~all</code>) kan legitieme mails blokkeren.</p>
+  </div>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+
+  <ul>
+    <li><strong>U heeft geen toegang tot het DNS-beheer</strong> van uw domein — dat beheert uw huidige webdesigner of IT-partner.</li>
+    <li><strong>De score blijft laag</strong> na correcte records — dan is uw IP-adres mogelijk geblacklist door eerder spamgedrag of een gehackte server.</li>
+    <li><strong>U verstuurt via meerdere platforms</strong> (CRM, mailinglijst, factuurprogramma) en de records conflicteren met elkaar.</li>
+    <li><strong>Mails worden hard-gebounced</strong> in plaats van geweigerd — dan is er mogelijk een zwartelijstprobleem dat apart opgelost moet worden.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Wilt u zeker zijn dat uw e-mailconfiguratie 100% correct staat? <a href="/contact/" style="color:var(--g)">Contacteer ons</a> — we controleren en corrigeren alles voor €50.</p>
+  </div>
+
+  <div class="related">
+    <a href="/hosting/" class="related-card">
+      <span class="related-icon">🖥️</span>
+      <div>
+        <h4>Hosting Hasselt</h4>
+        <p>Betrouwbare hosting met correcte mailconfiguratie van bij de start.</p>
+      </div>
+    </a>
+    <a href="/blog/wordpress-gehackt/" class="related-card">
+      <span class="related-icon">🔐</span>
+      <div>
+        <h4>WordPress site gehackt</h4>
+        <p>Een gehackte site verstuurt soms spam — zo herstelt u de situatie.</p>
+      </div>
+    </a>
+    <a href="/blog/http-error-500/" class="related-card">
+      <span class="related-icon">⚠️</span>
+      <div>
+        <h4>HTTP 500 fout oplossen</h4>
+        <p>Serverproblemen die ook uw mailserver kunnen beïnvloeden.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar">KL</div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><span>FB · LI</span></div></footer>
+</body></html>
