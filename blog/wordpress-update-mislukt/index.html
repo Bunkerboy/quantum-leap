@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>WordPress Update Mislukt? Wit Scherm of Foutmelding Oplossen [2026] — Quantum Leap</title>
+<meta name="description" content="WordPress-update mislukt? Wit scherm of foutmelding? In 15 minuten hersteld. Verwijder het .maintenance-bestand, deactiveer plugins en herhaal de update."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/wordpress-update-mislukt/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/wordpress-update-mislukt/"/>
+<meta property="og:title" content="WordPress Update Mislukt? Wit Scherm of Foutmelding Oplossen [2026]"/>
+<meta property="og:description" content="WordPress-update mislukt? In 15 minuten hersteld. .maintenance verwijderen, plugins deactiveren, update herhalen."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WordPress Update Mislukt? Wit Scherm of Foutmelding Oplossen [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"Stap-voor-stap herstel na een mislukte WordPress-update: maintenance-bestand, plugins deactiveren, update herhalen.","url":"https://www.quantum-leap.be/blog/wordpress-update-mislukt/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" width="133" height="32"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-p" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-g" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>WordPress update mislukt</span></nav>
+  <p class="lb">// WordPress · Onderhoud · Herstel</p>
+  <h1><em>WordPress update</em><br><span class="outline">mislukt — zo herstel je</span></h1>
+  <p class="sub">U klikte op “Bijwerken” en nu ziet u een wit scherm, een foutmelding of hangt de site vast op “Bezig met onderhoud”. Raak niet in paniek — dit is in 15 minuten hersteld.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 4 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>Site toont wit scherm of “tijdelijk niet beschikbaar” na WordPress-update</h2>
+        <p>Direct na het klikken op een update in het WordPress-dashboard</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>Update werd onderbroken (time-out, verbindingsverlies) waardoor het <code>.maintenance</code>-bestand blijft staan, of een plugin conflicteert met de nieuwe versie.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>Verwijder <code>.maintenance</code> via FTP, deactiveer plugins via FTP en herhaal de update. Herstel daarna de plugins één voor één.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Zelf opgelost in ~15 minuten</span>
+      <a href="/contact/" class="fix-cta">Geen zin? Wij fixen het voor €75 →</a>
+    </div>
+  </div>
+
+  <h2>Wat er precies misloopt</h2>
+
+  <p>Elke WordPress-update begint met het aanmaken van een verborgen bestand <code>.maintenance</code> in de rootmap. Zo lang dat bestand aanwezig is, toont WordPress aan bezoekers: “Tijdelijk niet beschikbaar wegens gepland onderhoud.” Normaal verwijdert WordPress dit bestand zelf na de update. Wordt de update onderbroken — door een time-out, een trage server of een verbindingsprobleem — dan blijft het bestand staan en zit uw site permanent in onderhoudsmodus.</p>
+
+  <p>Een tweede oorzaak is een plugin-conflict: de nieuwe WordPress-versie introduceert een API-wijziging die een oudere plugin niet ondersteunt, wat resulteert in een fatale PHP-fout en een wit scherm.</p>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Maak eerst een back-up via uw hostingpanel</h3>
+        <p>Voordat u ook maar iets aanraakt: maak een back-up van de huidige staat via uw hostingpanel (cPanel → Back-up, of Jetpack/UpdraftPlus als die nog bereikbaar zijn). Zo heeft u altijd een terugkeeroptie als er iets misgaat tijdens het herstel. De meeste hostingproviders bewaren ook automatische snapshots — vraag ernaar als u ze niet vindt.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>Verwijder het .maintenance-bestand via FTP</h3>
+        <p>Verbind via FTP of SFTP met uw server (gebruik FileZilla of de bestandsbeheerder in cPanel). Navigeer naar de rootmap van uw WordPress-installatie — dit is doorgaans <code>public_html/</code>. Zoek het bestand <code>.maintenance</code> (verborgen bestanden tonen: in FileZilla via Server → Verborgen bestanden tonen). Verwijder het bestand.</p>
+        <p>Herlaad uw site. Verschijnt de site normaal? Update voltooid. Ziet u nog een fout of wit scherm? Ga door naar stap 3.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>Deactiveer alle plugins via FTP</h3>
+        <p>Als u het dashboard niet kunt bereiken, deactiveer dan alle plugins via FTP: navigeer naar <code>wp-content/plugins/</code> en hernoem de map <code>plugins</code> naar <code>plugins_deactivated</code>. WordPress kan de plugins dan niet meer laden en omzeilt het conflict.</p>
+        <p>Herlaad uw site en dashboard. Werkt alles? Hernoem de map terug naar <code>plugins</code>. De plugins zijn nu aanwezig maar gedeactiveerd in WordPress.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>Herhaal de update en activeer plugins één voor één</h3>
+        <p>Ga naar <strong>Dashboard → Updates</strong> en voer de mislukte update opnieuw uit. Activeer daarna uw plugins één voor één via <strong>Plugins → Geïnstalleerde plugins</strong>. Na elke activatie: herlaad uw site. Gaat de site opnieuw kapot na een specifieke plugin? Die plugin is de boosdoener — zoek een update of alternatief.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Verhoog PHP memory limit als de fout aanhoudt</h3>
+        <p>Sommige updates mislukken omdat de PHP memory limit op de server te laag staat. Voeg deze regel toe aan uw <code>wp-config.php</code> (boven de regel <code>/* That's all */</code>):</p>
+        <p><code>define('WP_MEMORY_LIMIT', '256M');</code></p>
+        <p>Of voeg toe aan <code>.htaccess</code>: <code>php_value memory_limit 256M</code>. Probeer de update daarna opnieuw.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Klik nooit op “Bijwerken” en sluit dan het browservenster. Wacht altijd tot de update volledig afgerond is. Op trage verbindingen of gedeelde hosting kan een update enkele minuten duren.</p>
+  </div>
+
+  <h2>Herhaling voorkomen: updaten met een veilige workflow</h2>
+  <ul>
+    <li><strong>Maak altijd een back-up vóór elke update</strong> — UpdraftPlus (gratis) doet dit automatisch voor elke update.</li>
+    <li><strong>Update in een staging-omgeving</strong> — test updates op een kopie van uw site alvorens op productie te updaten.</li>
+    <li><strong>Update plugins vóór de WordPress-core</strong> — zo verkleint u de kans op conflicten.</li>
+    <li><strong>Vermijd updates op drukke momenten</strong> — niet vlak voor een presentatie of campagne.</li>
+  </ul>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+  <ul>
+    <li>U heeft geen FTP-toegang en het hostingpanel is niet beschikbaar.</li>
+    <li>De site is na het herstellen van plugins nog steeds kapot — een dieperliggend conflict of corrupte bestanden.</li>
+    <li>De update heeft data beschadigd of verwijderd — databaseherstel is dan nodig.</li>
+    <li>U wilt toekomstige updates automatisch en veilig laten verlopen met staging en monitoring.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Wilt u nooit meer wakker liggen van een mislukte update? <a href="/contact/" style="color:var(--g)">Vraag ons onderhoudscontract aan</a> — inclusief back-ups, updates en monitoring.</p>
+  </div>
+
+  <div class="related">
+    <a href="/wordpress-hasselt/" class="related-card">
+      <span class="related-icon">⚙️</span>
+      <div><h4>WordPress Hasselt</h4><p>Professioneel WordPress-beheer: updates, back-ups en monitoring uit handen gegeven.</p></div>
+    </a>
+    <a href="/blog/wordpress-gehackt/" class="related-card">
+      <span class="related-icon">🔐</span>
+      <div><h4>WordPress site gehackt</h4><p>Verouderde plugins zijn de meest voorkomende oorzaak van hacks — zo herstelt u.</p></div>
+    </a>
+    <a href="/blog/http-error-500/" class="related-card">
+      <span class="related-icon">⚠️</span>
+      <div><h4>HTTP 500 fout oplossen</h4><p>Een mislukte update geeft soms een 500-fout — ook die stap-voor-stap opgelost.</p></div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar"><img src="/img/authors/kristof-loyens-sm.webp" width="128" height="128" loading="lazy" decoding="async" alt="Kristof Loyens"/></div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" width="116" height="28" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><div class="fb-social"><a href="https://www.facebook.com/QuantumLeapDesign" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://www.linkedin.com/in/quantumleap" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a></div></div></footer>
+</body></html>

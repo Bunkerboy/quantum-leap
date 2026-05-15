@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contactformulier E-mails Komen Niet Aan? Oplossen in 20 min [2026] — Quantum Leap</title>
+<meta name="description" content="Klanten vullen uw contactformulier in maar u ontvangt niets? Het probleem is bijna altijd PHP mail() zonder SMTP. In 20 minuten opgelost met WP Mail SMTP."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/contactformulier-niet-ontvangen/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/contactformulier-niet-ontvangen/"/>
+<meta property="og:title" content="Contactformulier E-mails Komen Niet Aan? Oplossen in 20 min [2026]"/>
+<meta property="og:description" content="Formulier verstuurt maar u ontvangt niets? PHP mail() werkt niet meer op de meeste servers. WP Mail SMTP lost het op in 20 minuten."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Contactformulier E-mails Komen Niet Aan? Oplossen in 20 min [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"WordPress contactformulier-mails komen niet aan door PHP mail(). WP Mail SMTP instellen lost het op.","url":"https://www.quantum-leap.be/blog/contactformulier-niet-ontvangen/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" width="133" height="32"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-g" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-p" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>Contactformulier niet ontvangen</span></nav>
+  <p class="lb">// E-mail · WordPress · Contactformulier</p>
+  <h1><em>Contactformulier</em> —<br><span class="outline">e-mails komen niet aan</span></h1>
+  <p class="sub">Klanten vullen uw formulier in en krijgen een bevestiging, maar bij u komt er niets aan. Het probleem is bijna altijd hetzelfde — en de oplossing duurt 20 minuten.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 4 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>Contactformulier verstuurt maar u ontvangt geen e-mails</h2>
+        <p>Al een tijdje gaande, of plots gestopt na een servermigratie of hosting­wissel</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>WordPress gebruikt standaard de <code>PHP mail()</code>-functie om e-mails te versturen. Veel moderne hostingservers blokkeren of negeren dit zonder authenticatie.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>Installeer <strong>WP Mail SMTP</strong> en configureer het met een geauthenticeerde SMTP-verbinding via uw hostingprovider of een extern mailplatform.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Zelf opgelost in ~20 minuten</span>
+      <a href="/contact/" class="fix-cta">Geen zin? Wij fixen het voor €60 →</a>
+    </div>
+  </div>
+
+  <h2>Waarom werkt PHP mail() niet meer?</h2>
+
+  <p>WordPress verstuurt standaard e-mails via de <code>wp_mail()</code>-functie, die intern <code>PHP mail()</code> gebruikt. Dit verstuurt e-mails rechtstreeks van de server zonder authenticatie. Moderne mailservers (Gmail, Outlook, …) wantrouwen dit soort ongeauthenticeerde mail en weigeren het stilletjes — of sturen het naar spam. Bovendien schakelen steeds meer hostingproviders <code>PHP mail()</code> standaard uit om misbruik te voorkomen.</p>
+
+  <p>De oplossing is SMTP: een geauthenticeerd protocol waarbij uw site zich aanmeldt bij een mailserver met gebruikersnaam en wachtwoord, net zoals uw e-mailprogramma dat doet.</p>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Controleer of het formulier überhaupt verstuurt</h3>
+        <p>Vul uw eigen contactformulier in en kijk of u een succesmelding krijgt. Zo ja, dan verstuurt het formulier maar raakt de mail verloren. Controleer ook uw spammap — soms belandt de mail daar. Is er geen succesmelding? Dan is het een formulierconfiguratie-probleem, geen mailprobleem.</p>
+        <p>Staat u al lang niet meer in uw WordPress-dashboard? Controleer ook of het e-mailadres in uw formulierinstellingen nog correct is. In Contact Form 7: <strong>Contact → Contactformulieren → E-mail tabblad</strong>.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>Installeer WP Mail SMTP</h3>
+        <p>Ga in WordPress naar <strong>Plugins → Nieuwe plugin</strong> en zoek op “WP Mail SMTP”. Installeer en activeer de gratis versie. Dit is de meest gebruikte SMTP-plugin met meer dan 3 miljoen actieve installaties en actief onderhoud.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>Configureer de SMTP-verbinding</h3>
+        <p>Ga naar <strong>WP Mail SMTP → Instellingen</strong>. U heeft twee praktische opties:</p>
+        <p><strong>Optie A — Hosting SMTP:</strong> uw hostingprovider geeft u SMTP-gegevens (host, poort, gebruikersnaam, wachtwoord). Dit werkt altijd als uw site en e-mail bij dezelfde provider zitten. Poort 587 met STARTTLS of poort 465 met SSL zijn de standaardopties.</p>
+        <p><strong>Optie B — Gmail/Google Workspace:</strong> maak een App Password aan in uw Google-account (Beveiliging → App-wachtwoorden) en gebruik <code>smtp.gmail.com</code>, poort 587. Betrouwbaar en gratis voor kleine volumes.</p>
+        <p>Stel het “Van”-adres in op een adres van uw eigen domein (<code>info@uwdomein.be</code>), niet op een Gmail-adres — anders matcht het niet met uw SPF-record.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>Stuur een testmail</h3>
+        <p>Ga naar het tabblad <strong>E-mailtest</strong> in WP Mail SMTP en stuur een testmail naar uw eigen adres. Komt hij aan? Dan werkt SMTP correct. Controleer ook de spammap voor de zekerheid.</p>
+        <p>Mislukt de test? De plugin toont een foutmelding. “Authentication failed” betekent verkeerde inloggegevens. “Connection timed out” wijst op een verkeerde poort of een firewall op de server.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Test uw contactformulier en activeer e-maillogging</h3>
+        <p>Vul uw contactformulier opnieuw in als echte bezoeker. Komt de mail aan? Dan is het probleem opgelost. Activeer ook de e-maillogging in WP Mail SMTP Pro (betaalde versie) of gebruik een gratis alternatief zoals <strong>Mail Log</strong> — zo ziet u precies welke mails verstuurd werden en of ze succesvol waren.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Sla SMTP-wachtwoorden nooit op in de WordPress-database als uw site gehackt is geweest. Gebruik in dat geval de <code>wp-config.php</code>-methode om SMTP-gegevens buiten de database te bewaren — WP Mail SMTP ondersteunt dit.</p>
+  </div>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+  <ul>
+    <li>Uw hosting biedt geen SMTP-toegang en u wilt geen extern mailplatform opzetten.</li>
+    <li>U verstuurt grote volumes formuliermails en heeft een transactioneel e-mailplatform nodig.</li>
+    <li>Het formulier zelf geeft fouten of werkt niet correct — dat is een apart pluginprobleem.</li>
+    <li>U wilt ook automatische bevestigingsmails naar de invuller instellen met conditionele logica.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Klanten die u niet bereiken kost u opdrachten. <a href="/contact/" style="color:var(--g)">Contacteer ons</a> — wij fixen het voor €60 inclusief testmail en logging.</p>
+  </div>
+
+  <div class="related">
+    <a href="/blog/email-spam-oplossen/" class="related-card">
+      <span class="related-icon">📧</span>
+      <div><h4>E-mail in spam</h4><p>Mails komen aan maar belanden in spam? SPF, DKIM en DMARC zijn de oplossing.</p></div>
+    </a>
+    <a href="/wordpress-hasselt/" class="related-card">
+      <span class="related-icon">⚙️</span>
+      <div><h4>WordPress Hasselt</h4><p>Professioneel WordPress-beheer inclusief formulieren, mail en onderhoud.</p></div>
+    </a>
+    <a href="/blog/wordpress-gehackt/" class="related-card">
+      <span class="related-icon">🔐</span>
+      <div><h4>WordPress site gehackt</h4><p>Een gehackte site verstuurt soms spam via uw formulieren — zo herstelt u het.</p></div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar"><img src="/img/authors/kristof-loyens-sm.webp" width="128" height="128" loading="lazy" decoding="async" alt="Kristof Loyens"/></div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" width="116" height="28" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><div class="fb-social"><a href="https://www.facebook.com/QuantumLeapDesign" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://www.linkedin.com/in/quantumleap" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a></div></div></footer>
+</body></html>
