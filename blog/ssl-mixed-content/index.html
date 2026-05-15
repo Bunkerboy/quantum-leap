@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SSL Mixed Content Waarschuwing Oplossen [2026] — Quantum Leap</title>
+<meta name="description" content="Slot-icoon kapot of 'Not Secure' melding ondanks SSL? Mixed content in 20 minuten opgelost. Stap-voor-stap voor WordPress."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/ssl-mixed-content/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/ssl-mixed-content/"/>
+<meta property="og:title" content="SSL Mixed Content Waarschuwing Oplossen [2026]"/>
+<meta property="og:description" content="Slot-icoon kapot ondanks SSL? Mixed content in 20 minuten opgelost."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSL Mixed Content Waarschuwing Oplossen [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"Stap-voor-stap gids om SSL mixed content waarschuwingen op te lossen in WordPress.","url":"https://www.quantum-leap.be/blog/ssl-mixed-content/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" width="133" height="32"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-g" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-p" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>SSL mixed content</span></nav>
+  <p class="lb">// Beveiliging · HTTPS · WordPress</p>
+  <h1><em>SSL mixed content</em> —<br><span class="outline">slot kapot, zo fix je het</span></h1>
+  <p class="sub">U heeft een SSL-certificaat maar het slot-icoon in de browser is kapot of doorgestreept. Het probleem: HTTP-inhoud op een HTTPS-pagina. In 20 minuten opgelost.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 4 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>Browser toont “Not Secure” of kapot slot ondanks geldig SSL-certificaat</h2>
+        <p>Na de overstap van HTTP naar HTTPS, of na het installeren van een SSL-certificaat</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>Afbeeldingen, scripts of stylesheets worden nog via <code>http://</code> geladen. Browsers blokkeren of markeren dit als onveilig op een HTTPS-pagina.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>Spoor alle HTTP-bronnen op via de browser-console en vervang ze door <code>https://</code>-versies. In WordPress doet een plugin dit automatisch.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Zelf opgelost in ~20 minuten</span>
+      <a href="/contact/" class="fix-cta">Geen zin? Wij fixen het voor €75 →</a>
+    </div>
+  </div>
+
+  <h2>Waarom gebeurt dit?</h2>
+
+  <p>Uw site draait nu op HTTPS, maar ergens in de code staan nog verwijzingen naar <code>http://uwdomein.be/afbeelding.jpg</code>. Die “gemengde inhoud” — HTTP op een HTTPS-pagina — activeert de waarschuwing. Het kan gaan om afbeeldingen in oude blogposts, een logo in de footer, een extern script of een stylesheet van een plugin.</p>
+
+  <p>Browsers onderscheiden twee soorten mixed content:</p>
+
+  <table>
+    <thead><tr><th>Type</th><th>Voorbeelden</th><th>Gevolg</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Passief</strong></td><td>Afbeeldingen, video, audio</td><td>Kapot slot-icoon, wel zichtbaar</td></tr>
+      <tr><td><strong>Actief</strong></td><td>Scripts, stylesheets, iframes</td><td>Door browser geblokkeerd, kan site breken</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Bevestig het probleem via de browser-console</h3>
+        <p>Open de pagina in Chrome of Firefox, druk op <code>F12</code> en ga naar het tabblad <strong>Console</strong>. Filter op “Mixed Content”. U ziet de exacte URL’s van de HTTP-bronnen die problemen veroorzaken — dat zijn precies de bestanden die u moet aanpakken.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>WordPress: siteurl en home op HTTPS zetten</h3>
+        <p>Ga naar <strong>Instellingen → Algemeen</strong> in uw WordPress-dashboard. Controleer of zowel “WordPress-adres” als “Site-adres” beginnen met <code>https://</code>. Staan ze nog op <code>http://</code>? Wijzig ze nu. Dit is de basis — zonder deze stap blijft alles mis.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>Installeer Really Simple SSL</h3>
+        <p>De plugin <strong>Really Simple SSL</strong> (gratis, meer dan 5 miljoen installaties) lost het merendeel van de mixed content automatisch op. Hij vervangt HTTP-referenties in de uitvoer van uw site door HTTPS en voegt een HSTS-header toe. Installeer, activeer, klik op “Activeer SSL” — klaar.</p>
+        <p>Let op: als uw site na activatie kapot gaat (wit scherm), heeft u waarschijnlijk geen geldig SSL-certificaat. Controleer dit eerst via uw hostingpanel.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>Hard-gecodeerde HTTP-links in de database vervangen</h3>
+        <p>Oude blogposts en paginainhoud bevatten vaak direct ingevoegde <code>http://</code>-links. De snelste manier om deze te vervangen is via de plugin <strong>Better Search Replace</strong>:</p>
+        <p>Zoek naar: <code>http://uwdomein.be</code> — Vervang door: <code>https://uwdomein.be</code></p>
+        <p>Selecteer alle tabellen, vink “Dry Run” eerst aan om te zien wat er gewijzigd wordt, en voer daarna de echte run uit. Maak altijd eerst een databaseback-up.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Verifieer en leeg de cache</h3>
+        <p>Leeg de cache van uw caching-plugin én de browsercache (<code>Ctrl+Shift+R</code>). Herlaad de pagina en controleer het slot-icoon. Nog steeds een waarschuwing? Herhaal stap 1 — er zijn mogelijk nog andere HTTP-bronnen van externe domeinen die u manueel moet bijwerken in de betreffende plugin of thema-instellingen.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Externe bronnen van andere domeinen (bijv. een script van een extern platform) kunt u niet forceren naar HTTPS. Als die externe URL geen HTTPS ondersteunt, moet u de bron vervangen of verwijderen.</p>
+  </div>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+  <ul>
+    <li>Het slot-icoon blijft kapot na alle stappen — externe bronnen zonder HTTPS-ondersteuning vereisen maatwerk.</li>
+    <li>De site gaat kapot na activatie van SSL — het SSL-certificaat is mogelijk niet correct geconfigureerd op serverniveau.</li>
+    <li>Uw site gebruikt een custom thema met hard-gecodeerde URL’s in template-bestanden.</li>
+    <li>U gebruikt een headless of niet-WordPress setup waarbij de database-aanpak niet volstaat.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Slot-icoon nog steeds kapot? <a href="/contact/" style="color:var(--g)">Contacteer ons</a> — wij lossen het op voor €75 inclusief SSL-controle.</p>
+  </div>
+
+  <div class="related">
+    <a href="/hosting/" class="related-card">
+      <span class="related-icon">🖥️</span>
+      <div><h4>Hosting Hasselt</h4><p>Hosting met gratis SSL-certificaat, correct geconfigureerd van bij de start.</p></div>
+    </a>
+    <a href="/blog/email-spam-oplossen/" class="related-card">
+      <span class="related-icon">📧</span>
+      <div><h4>E-mail in spam</h4><p>Ook DNS-gerelateerd: SPF, DKIM en DMARC instellen zodat uw mails aankomen.</p></div>
+    </a>
+    <a href="/wordpress-hasselt/" class="related-card">
+      <span class="related-icon">⚙️</span>
+      <div><h4>WordPress Hasselt</h4><p>Professioneel WordPress-beheer inclusief beveiliging en onderhoud.</p></div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar"><img src="/img/authors/kristof-loyens-sm.webp" width="128" height="128" loading="lazy" decoding="async" alt="Kristof Loyens"/></div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" width="116" height="28" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><div class="fb-social"><a href="https://www.facebook.com/QuantumLeapDesign" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://www.linkedin.com/in/quantumleap" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a></div></div></footer>
+</body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="nl-BE"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>DNS Wijzigen of Domein Verhuizen zonder Downtime [2026] — Quantum Leap</title>
+<meta name="description" content="Domein verhuizen of DNS-records wijzigen zonder uw site offline te halen. Stap-voor-stap aanpak inclusief TTL-strategie en propagatiecheck."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.quantum-leap.be/blog/dns-domein-verhuizen/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.quantum-leap.be/blog/dns-domein-verhuizen/"/>
+<meta property="og:title" content="DNS Wijzigen of Domein Verhuizen zonder Downtime [2026]"/>
+<meta property="og:description" content="Domein verhuizen zonder downtime? Met de juiste TTL-strategie en deze stappen gaat het vlekkeloos."/>
+<meta property="og:site_name" content="Quantum Leap"/>
+<meta property="og:locale" content="nl_BE"/>
+<meta property="article:published_time" content="2026-05-14T10:00:00+02:00"/>
+<meta property="article:author" content="Kristof Loyens"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"DNS Wijzigen of Domein Verhuizen zonder Downtime [2026]","author":{"@type":"Person","name":"Kristof Loyens"},"publisher":{"@type":"Organization","name":"Quantum Leap","url":"https://www.quantum-leap.be"},"datePublished":"2026-05-14","dateModified":"2026-05-14","description":"Stap-voor-stap gids om DNS te wijzigen of een domein te verhuizen zonder downtime.","url":"https://www.quantum-leap.be/blog/dns-domein-verhuizen/"}</script>
+<link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/bebasneue-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="stylesheet" href="/style.css"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/></head><body>
+<nav><a href="/" class="nl"><img src="/img/quantumleap.png" alt="Quantum Leap" width="133" height="32"/></a><ul class="nk"><li><a href="/webdesign-hasselt/">Webdesign</a></li><li><a href="/seo-hasselt/">SEO</a></li><li><a href="/ai-toepassingen/">AI</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="/cases/">Cases</a></li><li><a href="/blog/">Blog</a></li></ul><a href="/contact/" class="nc">Contacteer ons</a><button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="const menu=this.parentElement.querySelector('.nk');menu.classList.toggle('open');this.classList.toggle('active');this.setAttribute('aria-expanded',menu.classList.contains('open'))"><span></span><span></span><span></span></button></nav>
+
+<article>
+<header class="page-hero">
+  <div class="watermark" style="top:-1rem;right:-2rem">FIX</div>
+  <div class="orb orb-p" style="width:350px;height:350px;top:-20%;right:-10%"></div>
+  <div class="orb orb-g" style="width:250px;height:250px;bottom:-10%;left:-5%"></div>
+  <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span><span>DNS &amp; domeinverhuizing</span></nav>
+  <p class="lb">// Hosting · DNS · Domeinverhuizing</p>
+  <h1><em>DNS wijzigen</em> of<br><span class="outline">domein verhuizen</span></h1>
+  <p class="sub">Site onbereikbaar na een DNS-wijziging of domeinverhuizing? Of wilt u het deze keer zonder downtime aanpakken? Met de juiste voorbereiding is het een fluitje van een cent.</p>
+  <p style="font-family:var(--fm);font-size:.75rem;color:var(--txm);margin-top:1.5rem">Door Kristof Loyens — 14 mei 2026 · 5 min leestijd</p>
+</header>
+
+<div class="page-body" style="max-width:760px;">
+
+  <div class="fix-hero">
+    <div class="fix-problem">
+      <div class="icon">🔴</div>
+      <div>
+        <h2>Site onbereikbaar of e-mail stopt na DNS-wijziging of domeinverhuizing</h2>
+        <p>Bij overstap naar een nieuwe hostingprovider, serververhuizing of wijziging van naamservers</p>
+      </div>
+    </div>
+    <div class="fix-grid">
+      <div class="fix-cause">
+        <span class="fix-label">// Oorzaak</span>
+        <p>DNS-records verwijzen nog naar de oude server, of de TTL was te hoog waardoor het uren duurt voor de wijziging wereldwijd doorkomt.</p>
+      </div>
+      <div class="fix-solution">
+        <span class="fix-label">// Oplossing</span>
+        <p>TTL verlagen vóór de verhuizing, alle records correct overnemen bij de nieuwe provider, en de propagatie bewaken via <code>dnschecker.org</code>.</p>
+      </div>
+    </div>
+    <div class="fix-footer">
+      <span class="fix-time">⏱ Voorbereid in ~30 min + propagatietijd (15 min tot 24 u)</span>
+      <a href="/contact/" class="fix-cta">Wij begeleiden de verhuizing voor €100 →</a>
+    </div>
+  </div>
+
+  <h2>Hoe werkt DNS precies?</h2>
+
+  <p>DNS (Domain Name System) vertaalt uw domeinnaam naar een IP-adres. Typt iemand <code>uwbedrijf.be</code>, dan raadpleegt zijn browser een DNS-server die zegt: “dat domein staat op server 1.2.3.4.” Die informatie wordt gecachet voor de duur van de TTL (Time To Live) — standaard 4 tot 24 uur. Verhuist u uw site, dan moeten alle DNS-servers wereldwijd die cache verversen. Dat is de “propagatie’tijl” waar iedereen over spreekt.</p>
+
+  <table>
+    <thead><tr><th>Record</th><th>Wat het doet</th><th>Typische waarde</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>Koppelt domein aan IPv4-adres</td><td>IP van uw server</td></tr>
+      <tr><td><strong>AAAA</strong></td><td>Koppelt domein aan IPv6-adres</td><td>IPv6 van uw server</td></tr>
+      <tr><td><strong>CNAME</strong></td><td>Aliasverwijzing naar ander domein</td><td><code>www → uwdomein.be</code></td></tr>
+      <tr><td><strong>MX</strong></td><td>Bepaalt welke server uw e-mail ontvangt</td><td>Mailserverhostnaam</td></tr>
+      <tr><td><strong>TXT</strong></td><td>Verificatie, SPF, DKIM, DMARC</td><td>Zie <a href="/blog/email-spam-oplossen/" style="color:var(--g)">e-mail spam-gids</a></td></tr>
+      <tr><td><strong>NS</strong></td><td>Naamservers die de DNS-zone beheren</td><td>Van uw registrar of provider</td></tr>
+    </tbody>
+  </table>
+
+  <div class="fix-steps">
+
+    <div class="fix-step">
+      <div class="fix-step-num">1</div>
+      <div>
+        <h3>Exporteer alle huidige DNS-records</h3>
+        <p>Voordat u ook maar iets wijzigt: noteer of exporteer alle bestaande DNS-records. Log in bij uw huidige registrar of DNS-provider en maak een screenshot of export van elke record. Let extra op MX-records (e-mail), TXT-records (SPF, DKIM, DMARC, verificatiecodes) en eventuele subdomein-records. Deze vergeet men het vaakst en dat kost uren aan uitzoekwerk achteraf.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">2</div>
+      <div>
+        <h3>Verlaag de TTL 24–48 uur voor de verhuizing</h3>
+        <p>Stel de TTL van uw A-record en MX-record in op <strong>300 seconden</strong> (5 minuten). Wacht daarna 24 uur — pas dan is de oude (hoge) TTL-cache overal verlopen en werkt de lage TTL. Bij de eigenlijke verhuizing propageert de wijziging dan binnen 5 minuten wereldwijd in plaats van 24 uur.</p>
+        <p>Als de verhuizing al plaatsvond en u dit niet gedaan heeft: geduld is de enige optie. Propagatie duurt dan tot 48 uur.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">3</div>
+      <div>
+        <h3>Stel alle records in bij de nieuwe provider</h3>
+        <p>Log in bij uw nieuwe hostingprovider of DNS-beheerder en voer alle records in die u in stap 1 genoteerd heeft. Kopieer ze exact — één typefout in een MX-record en uw e-mail stopt. Vergeet de <code>www</code>-variant niet: die heeft doorgaans een CNAME-record dat verwijst naar het rootdomein.</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">4</div>
+      <div>
+        <h3>Wijzig de naamservers bij uw registrar</h3>
+        <p>Als u de DNS-beheer volledig verhuist (niet alleen de A-records aanpast maar ook de naamservers), log dan in bij uw domeinregistrar (Combell, OVH, Versio, DNS.be…) en wijzig de NS-records naar de naamservers van uw nieuwe provider. Dit is de schakelaar die zegt: “ga voor DNS-info voortaan naar deze nieuwe servers.”</p>
+      </div>
+    </div>
+
+    <div class="fix-step">
+      <div class="fix-step-num">5</div>
+      <div>
+        <h3>Bewaak de propagatie via dnschecker.org</h3>
+        <p>Surf naar <strong>dnschecker.org</strong>, vul uw domein in en selecteer het recordtype (A, MX…). U ziet per regio of de nieuwe waarden al actief zijn. Zodra alle regio’s groen zijn, is de propagatie volledig. Verhoog daarna de TTL opnieuw naar 3600 seconden (1 uur) of hoger.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fix-warning">
+    <span>⚠️</span>
+    <p><strong>Let op:</strong> Wijzig naamservers en A-records nooit gelijktijdig. Wijzig eerst het A-record en wacht op propagatie. Pas dan de naamservers aan als dat nodig is. Zo heeft u altijd een werkende fallback.</p>
+  </div>
+
+  <h2>Wanneer schakelt u een professional in?</h2>
+  <ul>
+    <li>U heeft toegang tot noch de registrar noch het hostingpanel — dat vereist contact met de vorige beheerder of provider.</li>
+    <li>Uw domein staat op het punt te verlopen tijdens de verhuizing — dit vraagt urgente actie.</li>
+    <li>U combineert een domeinverhuizing met een nieuwe website én nieuwe e-mailomgeving — drie bewegende delen tegelijk is complex.</li>
+    <li>U werkt met een .be-domein via DNS.be en bent niet vertrouwd met de EPP-authcode-procedure.</li>
+  </ul>
+
+  <div class="cta-inline">
+    <p>Wilt u uw domein of hosting verhuizen zonder risico op downtime? <a href="/contact/" style="color:var(--g)">Contacteer ons</a> — wij begeleiden het volledig voor €100.</p>
+  </div>
+
+  <div class="related">
+    <a href="/hosting/" class="related-card">
+      <span class="related-icon">🖥️</span>
+      <div><h4>Hosting Hasselt</h4><p>Betrouwbare hosting met professioneel DNS-beheer en migratiebegeleiding.</p></div>
+    </a>
+    <a href="/blog/email-spam-oplossen/" class="related-card">
+      <span class="related-icon">📧</span>
+      <div><h4>E-mail in spam</h4><p>Na een verhuizing staan SPF en DKIM vaak verkeerd — zo herstelt u ze.</p></div>
+    </a>
+    <a href="/blog/ssl-mixed-content/" class="related-card">
+      <span class="related-icon">🔒</span>
+      <div><h4>SSL mixed content</h4><p>Na een verhuizing duikt mixed content regelmatig op — zo lost u het op.</p></div>
+    </a>
+  </div>
+
+  <div class="author-box">
+    <div class="avatar"><img src="/img/authors/kristof-loyens-sm.webp" width="128" height="128" loading="lazy" decoding="async" alt="Kristof Loyens"/></div>
+    <div>
+      <p class="name">Kristof Loyens</p>
+      <p class="bio">Eigenaar Quantum Leap. WordPress fan. Designer en Developer. Loves The interwebz, snowboarding, graffiti en luide muziek. Maakt een geweldige pompoensoep.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  </p>
+
+</div>
+</article>
+
+<footer><div class="fi"><div class="fc"><img src="/img/quantumleap.png" alt="Quantum Leap" width="116" height="28" style="height:28px;margin-bottom:.6rem;opacity:.7"/><p>Uw internetidentiteit laten werken voor u.</p></div><div class="fc"><h4>Diensten</h4><a href="/webdesign-hasselt/">Webdesign Hasselt</a><a href="/seo-hasselt/">SEO Hasselt</a><a href="/wordpress-hasselt/">WordPress</a><a href="/ai-toepassingen/">AI-toepassingen</a></div><div class="fc"><h4>Info</h4><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/cases/">Case studies</a><a href="/contact/">Contact</a></div></div><div class="fb"><span>© 2026 Quantum Leap — Hasselt</span><div class="fb-social"><a href="https://www.facebook.com/QuantumLeapDesign" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://www.linkedin.com/in/quantumleap" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a></div></div></footer>
+</body></html>
