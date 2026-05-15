@@ -383,6 +383,8 @@ main,footer{position:relative;z-index:1}
   body > nav{height:64px;overflow:visible}
   body > nav .nc{display:none!important}
   body > nav .nk{display:none!important}
+  body > nav .nk.open{display:flex!important}
+  body > nav .nk a{font-size:1rem;padding:.9rem 0;display:block}
   body > nav .menu-toggle{display:flex!important}
   .page-hero,.page-body{width:100vw;max-width:100vw;overflow:hidden}
   .page-hero{padding:calc(64px + 3.5rem) var(--pad) 3rem}
