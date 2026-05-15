@@ -121,15 +121,27 @@ h3{font-size:1.1rem;font-weight:600}
 .tmc h3{font-size:.95rem;color:#fff;margin-bottom:.15rem}.tmc .rol{font-size:.78rem;color:var(--txm);margin-bottom:.4rem}.tmc a{font-size:.78rem;color:var(--g)}
 .cr{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem;padding-top:3rem;border-top:1px solid var(--bd)}
 .ci{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}.ci span,.ci a{font-size:.88rem;color:var(--txm)}.ci a:hover{color:var(--g)}
-input,textarea{width:100%;padding:.7rem 1rem;border:1px solid var(--bd);border-radius:8px;background:var(--n2);color:var(--tx);font-family:var(--f);font-size:.88rem;outline:none;transition:border-color .2s,box-shadow .2s}
-input:focus,textarea:focus{border-color:var(--g);box-shadow:0 0 14px rgba(34,197,94,.12)}textarea{resize:vertical}
+input,textarea{width:100%;padding:.95rem 1.15rem;border:1px solid rgba(228,228,240,.16);border-radius:10px;background:rgba(255,255,255,.035);color:var(--tx);font-family:var(--f);font-size:.92rem;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+input::placeholder,textarea::placeholder{color:rgba(228,228,240,.42)}
+input:hover,textarea:hover{background:rgba(255,255,255,.05);border-color:rgba(228,228,240,.22)}
+input:focus,textarea:focus{border-color:var(--g);background:rgba(255,255,255,.06);box-shadow:0 0 0 3px rgba(34,197,94,.14)}textarea{resize:vertical}
+.form-success{display:none;padding:2rem 1.5rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:12px;text-align:center;margin-top:1rem}
+.form-success.show{display:block;animation:successFadeIn .35s ease-out}
+.form-success h3{color:var(--gl);font-size:1.15rem;margin-bottom:.5rem}
+.form-success p{color:var(--tx);font-size:.9rem;line-height:1.55}
+.form-success .icon{font-size:2.4rem;margin-bottom:.75rem;display:block}
+@keyframes successFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 /* ═══ FOOTER ═══ */
 footer{background:var(--n1);border-top:1px solid var(--bd);padding:3rem var(--pad) 1.5rem}
 .fi{max-width:var(--mx);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--bd)}
 .fc h4{font-family:var(--fm);font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--txm);margin-bottom:.8rem}
-.fc p,.fc a{font-size:.82rem;color:var(--txm);line-height:1.8;display:block}.fc a:hover{color:var(--tx)}
-.fb{max-width:var(--mx);margin:0 auto;padding-top:1.25rem;display:flex;justify-content:space-between;font-size:.72rem;color:rgba(228,228,240,.2)}
+.fc p{font-size:.82rem;color:var(--txm);line-height:1.8;display:block}
+.fc a{font-size:.86rem;color:var(--txm);line-height:1.5;display:block;padding:.5rem 0;min-height:24px}.fc a:hover{color:var(--tx)}
+.fb{max-width:var(--mx);margin:0 auto;padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:rgba(228,228,240,.55)}
+.fb-social{display:flex;gap:.4rem}
+.fb-social a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:.4rem .7rem;border:1px solid rgba(228,228,240,.14);border-radius:8px;color:rgba(228,228,240,.7);font-size:.74rem;font-weight:500;letter-spacing:.04em;transition:color .2s,border-color .2s,background .2s}
+.fb-social a:hover{color:var(--g);border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.06)}
 
 @media(max-width:860px){
   .hero{flex-direction:column;min-height:auto;padding-top:calc(64px + 3rem)}.hero-float{display:none}
@@ -310,7 +322,8 @@ h2 em{color:rgba(228,228,240,.38)}
 .author-box .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .author-box .name{color:var(--tx);font-weight:700;margin-bottom:.2rem}
 .cr{border-top:1px solid rgba(228,228,240,.12)}
-input,textarea{border-radius:0;background:rgba(16,16,46,.58);border-color:rgba(228,228,240,.12)}
+input,textarea{border-radius:10px;background:rgba(255,255,255,.04);border-color:rgba(228,228,240,.18);padding:1rem 1.2rem}
+input:focus,textarea:focus{background:rgba(255,255,255,.07)}
 footer{background:transparent;border-top:1px solid rgba(228,228,240,.1)}
 .fi{border-bottom-color:rgba(228,228,240,.1)}
 body::before,body::after{content:"";position:fixed;inset:-22vmax;pointer-events:none;z-index:0;background-repeat:repeat;will-change:transform,opacity}
