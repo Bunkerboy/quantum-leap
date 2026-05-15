@@ -267,7 +267,7 @@ h2 em{color:rgba(228,228,240,.38)}
 body::before,body::after{content:"";position:fixed;inset:-22vmax;pointer-events:none;z-index:0;background-repeat:repeat;will-change:transform,opacity}
 body::before{background-image:radial-gradient(circle,rgba(228,228,240,.16) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(34,197,94,.16) 0 1px,transparent 2px);background-size:150px 150px,240px 240px;background-position:0 0,70px 90px;opacity:.18;filter:blur(.2px);animation:depthFar 86s linear infinite}
 body::after{background-image:radial-gradient(circle,rgba(167,139,250,.2) 0 2px,transparent 5px),radial-gradient(circle,rgba(34,197,94,.16) 0 1.5px,transparent 5px);background-size:380px 380px,560px 560px;background-position:30px 50px,190px 130px;opacity:.13;filter:blur(2.4px);animation:depthNear 48s ease-in-out infinite alternate}
-body > nav,main,footer{position:relative;z-index:1}
+main,footer{position:relative;z-index:1}
 @keyframes depthFar{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-150px,95px,0) scale(1.03)}}
 @keyframes depthNear{0%{transform:translate3d(0,0,0) scale(1.04);opacity:.09}50%{opacity:.16}100%{transform:translate3d(95px,-70px,0) scale(1.13);opacity:.11}}
 @media(max-width:860px){.hero-avatar::before{animation:avatarSpin 3s linear 1}.hero-avatar::after{animation:avatarPulse 3s ease-in-out 1}.hero-avatar img{animation:avatarFloat 3s ease-in-out 1}}

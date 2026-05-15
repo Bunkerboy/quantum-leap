@@ -334,14 +334,14 @@ footer{background:transparent;border-top:1px solid rgba(228,228,240,.1)}
 body::before,body::after{content:"";position:fixed;inset:-22vmax;pointer-events:none;z-index:0;background-repeat:repeat;will-change:transform,opacity}
 body::before{background-image:radial-gradient(circle,rgba(228,228,240,.16) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(34,197,94,.16) 0 1px,transparent 2px);background-size:150px 150px,240px 240px;background-position:0 0,70px 90px;opacity:.18;filter:blur(.2px);animation:depthFar 86s linear infinite}
 body::after{background-image:radial-gradient(circle,rgba(167,139,250,.2) 0 2px,transparent 5px),radial-gradient(circle,rgba(34,197,94,.16) 0 1.5px,transparent 5px);background-size:380px 380px,560px 560px;background-position:30px 50px,190px 130px;opacity:.13;filter:blur(2.4px);animation:depthNear 48s ease-in-out infinite alternate}
-body > nav,main,footer{position:relative;z-index:1}
+main,footer{position:relative;z-index:1}
 @keyframes depthFar{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-150px,95px,0) scale(1.03)}}
 @keyframes depthNear{0%{transform:translate3d(0,0,0) scale(1.04);opacity:.09}50%{opacity:.16}100%{transform:translate3d(95px,-70px,0) scale(1.13);opacity:.11}}
 @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
 @media(max-width:1020px){.port-grid,.proj-grid{grid-template-columns:1fr}.port-card{display:block}.page-hero h1,h1{font-size:clamp(4.4rem,16vw,8rem)}}
 @media(max-width:860px){
   html,body,main{width:100%;max-width:100%;overflow-x:hidden}
-  body > nav{height:64px}
+  body > nav{height:64px;overflow:visible}
   body > nav .nc{display:none!important}
   .page-hero,.page-body{width:100vw;max-width:100vw;overflow:hidden}
   .page-hero{padding:calc(64px + 3.5rem) var(--pad) 3rem}
