@@ -31,7 +31,6 @@
 
 <div class="page-body" style="max-width:760px;">
 
-  <!-- SIGNALEN BLOK -->
   <div style="background:var(--n2);border:1px solid rgba(239,68,68,.25);border-radius:var(--r);overflow:hidden;margin-bottom:3rem">
     <div style="padding:1.25rem 1.5rem;border-bottom:1px solid rgba(239,68,68,.2);font-family:var(--fm);font-size:.7rem;color:#ef4444;text-transform:uppercase;letter-spacing:.1em">// Herkent u een van deze signalen?</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(239,68,68,.1)">
@@ -47,9 +46,7 @@
   <p style="font-size:1.05rem;color:var(--tx);line-height:1.8">Een gehackte WordPress-site is nachtmerriescenario voor elke ondernemer. Maar het overkomt meer mensen dan u denkt — WordPress drijft meer dan 40% van alle websites wereldwijd, wat het een populair doelwit maakt voor geautomatiseerde aanvallen. Hoe sneller u handelt, hoe minder schade.</p>
 
   <h2>Stap 1: Bevestig de hack</h2>
-
   <p>Soms lijkt een site gehackt maar is er een andere oorzaak (plugin-conflict, server­storing). Bevestig eerst het probleem via twee onafhankelijke bronnen:</p>
-
   <ul>
     <li><strong>Surf vanuit een ander netwerk</strong> — gebruik een mobiele dataverbinding of een VPN. Sommige redirects activeren zich alleen voor nieuwe bezoekers, niet voor u als beheerder.</li>
     <li><strong>Google Safe Browsing</strong> — controleer uw domein via de transparantierapport-tool van Google. Een rode vlag daar betekent dat Google actief bezoekers waarschuwt.</li>
@@ -62,18 +59,13 @@
   </div>
 
   <h2>Stap 2: Zet de site tijdelijk offline</h2>
-
   <p>Zo snel mogelijk offline gaan beperkt de schade voor uw bezoekers en voorkomt dat Google uw site massaal afstraft. U heeft hiervoor twee opties:</p>
-
   <ul>
     <li><strong>Via uw hostingpanel</strong> — de meeste providers (cPanel, Plesk, Kinsta, SiteGround…) hebben een knop om de site tijdelijk te deactiveren of in onderhoudsmodus te zetten zonder dat u toegang tot WordPress nodig heeft.</li>
     <li><strong>Via een onderhoudsmodus-plugin via FTP</strong> — upload een eenvoudig <code>index.php</code>-bestand met een "tijdelijk offline" melding naar de root van uw site.</li>
   </ul>
 
-  <p>Een onderhoudspagina is beter dan een gehackte site die nog steeds bezoekers omleidt of malware verspreidt. Zoek­machines respecteren een tijdelijk offline-signaal zolang u het correct instelt.</p>
-
   <h2>Stap 3: Wijzig alle wachtwoorden</h2>
-
   <p>Doe dit voordat u ook maar één andere stap zet, anders kunnen aanvallers terugkeren terwijl u bezig bent te herstellen.</p>
 
   <div style="background:var(--n2);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;margin:1.5rem 0">
@@ -88,9 +80,7 @@
   </div>
 
   <h2>Stap 4: Maak een forensische back-up</h2>
-
   <p>Dit klinkt contra-intuïtief — back-up maken van een gehackte site? — maar het is cruciaal. U heeft de besmette versie nodig om achteraf te achterhalen hoe de aanval plaatsvond en welke bestanden gewijzigd zijn.</p>
-
   <ul>
     <li>Download alle bestanden via FTP/SFTP naar een <strong>offline locatie</strong> (niet op de server).</li>
     <li>Exporteer een dump van de database via phpMyAdmin of de CLI.</li>
@@ -98,17 +88,12 @@
   </ul>
 
   <h2>Stap 5: Herstel vanaf een schone back-up</h2>
-
   <p>Als u recente, niet-besmette back-ups heeft, is dit de snelste weg naar herstel. De meeste hosting­providers bewaren automatische dagelijkse back-ups — vraag ernaar als u ze niet vindt.</p>
-
   <p><strong>Controleer altijd de datum.</strong> Een back-up van vóór de hack is nuttig; een back-up van na de hack bevat mogelijk al de malware. Vergelijk bestandsdatums en -groottes als u twijfelt.</p>
-
   <p>Na het terugzetten van de back-up: update onmiddellijk alle plugins, thema's en de WordPress-core. De kwetsbaarheid waardoor de aanvaller binnenkwam, bestaat anders nog steeds.</p>
 
   <h2>Stap 6: Handmatig malware opsporen (als er geen back-up is)</h2>
-
   <p>Geen bruikbare back-up? Dan begint het handwerk. Dit zijn de plaatsen waar aanvallers het vaakst kwaadaardige code verbergen:</p>
-
   <ul>
     <li><strong><code>wp-content/themes/[uw-thema]/</code></strong> — met name <code>functions.php</code>, <code>header.php</code> en <code>footer.php</code> worden aangepast.</li>
     <li><strong><code>wp-content/uploads/</code></strong> — PHP-bestanden horen hier nooit thuis. Elk <code>.php</code>-bestand in de uploads­map is verdacht.</li>
@@ -126,11 +111,8 @@
   <p>Plugins als <strong>Wordfence</strong> of <strong>MalCare</strong> doen dit scanwerk geautomatiseerd en markeren gewijzigde bestanden ten opzichte van de officiële WordPress-broncode.</p>
 
   <h2>Stap 7: Verwijder onbekende gebruikers en herstel bestandspermissies</h2>
-
   <p>Ga naar <strong>Gebruikers → Alle gebruikers</strong> in WordPress en verwijder elke beheerder die u niet herkent. Controleer ook uw hosting­panel op FTP-accounts die u niet zelf aangemaakt heeft.</p>
-
   <p>Stel daarna de bestandspermissies correct in — aanvallers verhogen deze soms om schrijftoegang te krijgen:</p>
-
   <ul>
     <li>Bestanden: <strong>644</strong></li>
     <li>Mappen: <strong>755</strong></li>
@@ -138,9 +120,7 @@
   </ul>
 
   <h2>Stap 8: Beveilig de site en kom terug online</h2>
-
   <p>Herstel zonder extra beveiliging is een herhaling van zetten. Neem deze maatregelen voordat u de site terug online zet:</p>
-
   <ul>
     <li><strong>Installeer een beveiligingsplugin</strong> — Wordfence (gratis) of iThemes Security blokkeren brute-force aanvallen en scannen op malware.</li>
     <li><strong>Activeer tweefactorauthenticatie</strong> — voor alle beheerdersaccounts. Dit maakt gestolen wachtwoorden nutteloos.</li>
@@ -151,7 +131,6 @@
   </ul>
 
   <h2>Oorzaken en preventie — overzicht</h2>
-
   <table>
     <thead>
       <tr><th>Aanvalsvector</th><th>Hoe het gebeurt</th><th>Preventie</th></tr>
@@ -167,9 +146,7 @@
   </table>
 
   <h2>Wanneer vraagt u hulp?</h2>
-
   <p>Niet iedereen heeft de technische kennis of tijd om dit zelf af te handelen — en dat is volkomen begrijpelijk. Schakel een professional in als:</p>
-
   <ul>
     <li>U geen bruikbare back-up kunt vinden.</li>
     <li>De malware terugkeert na verwijdering (backdoor nog aanwezig).</li>
@@ -178,13 +155,28 @@
     <li>Er persoonlijke data van klanten mogelijk gelekt is — dan speelt ook de GDPR-meldplicht.</li>
   </ul>
 
-  <div style="background:var(--n2);border-radius:var(--r);padding:2rem;margin:2.5rem 0;border-left:3px solid var(--accent)">
+  <div style="background:var(--n2);border-radius:var(--r);padding:2rem;margin:2.5rem 0;border-left:3px solid var(--g)">
     <h3 style="margin-bottom:.75rem">Quantum Leap to the rescue!</h3>
-    <p>We kwamen onlangs tussen bij een lokaal advocatenkantoor waarvan de WordPress-site stiekem bezoekers doorstuurde naar een casino-site — en dat al weken. De eigenaar merkte het pas toen een klant hem erop wees. We herstelden de site vanuit een clean back-up, verwijderden de backdoor die de aanvaller achtergelaten had, en zetten een monitoringsysteem op dat abnormale bestandswijzigingen meteen signaleert. Sindsdien: geen incidenten meer.</p>
+    <p>We kwamen onlangs tussen bij een lokaal bedrijf waarvan de WordPress-site stiekem bezoekers doorstuurde naar een casino-site — en dat al weken. De eigenaar merkte het pas toen een klant hem erop wees. We herstelden de site vanuit een clean back-up, verwijderden de backdoor die de aanvaller achtergelaten had, en zetten een monitoringsysteem op dat abnormale bestandswijzigingen meteen signaleert. Sindsdien: geen incidenten meer.</p>
   </div>
 
-  <div class="cta-box">
-    <p><strong>WordPress-site gehackt of wilt u een aanval voorkomen?</strong> <a href="/contact/" style="color:var(--accent)">Neem contact met ons op</a> — we helpen snel en discreet.</p>
+  <div class="cta-inline">
+    <p><strong>WordPress-site gehackt of wilt u een aanval voorkomen?</strong> <a href="/contact/" style="color:var(--g)">Neem contact met ons op</a> — we helpen snel en discreet.</p>
+  </div>
+
+  <div class="related">
+    <a href="/blog/wordpress-update-mislukt/" class="related-card">
+      <span class="related-icon">⚠️</span>
+      <div><h4>WordPress update mislukt</h4><p>Verouderde plugins zijn de meest voorkomende ingang voor hackers — zo herstel je na een mislukte update.</p></div>
+    </a>
+    <a href="/wordpress-hasselt/" class="related-card">
+      <span class="related-icon">⚙️</span>
+      <div><h4>WordPress Hasselt</h4><p>Professioneel WordPress-beheer inclusief beveiliging, back-ups en monitoring.</p></div>
+    </a>
+    <a href="/seo-hasselt/" class="related-card">
+      <span class="related-icon">🔍</span>
+      <div><h4>SEO Hasselt</h4><p>Een gehackte site verdwijnt snel uit Google — duurzame SEO helpt u terug bovenaan.</p></div>
+    </a>
   </div>
 
   <div class="author-box">
@@ -195,8 +187,8 @@
     </div>
   </div>
 
-  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)">
-    <a href="/blog/" style="color:var(--accent);font-size:.9rem">← Terug naar alle blogberichten</a>
+  <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(228,228,240,.12)">
+    <a href="/blog/" style="color:var(--g);font-size:.9rem">← Terug naar alle blogberichten</a>
   </p>
 
 </div>
