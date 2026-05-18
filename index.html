@@ -69,12 +69,12 @@ h3{font-size:1.1rem;font-weight:600}
 .hc-n{font-family:var(--fd);font-size:2.4rem;font-weight:400;color:#fff;letter-spacing:.02em;text-shadow:0 0 16px rgba(34,197,94,.3)}.hc-l{font-family:var(--fm);font-size:.65rem;color:var(--txm);margin-top:.1rem;letter-spacing:.05em}
 
 /* ═══ MARQUEE ═══ */
-.marquee{overflow:hidden;padding:3rem 0;border-top:1px solid rgba(167,139,250,.1);border-bottom:1px solid rgba(34,197,94,.1);background:var(--n2)}
-.marquee-track{display:flex;gap:6rem;animation:scroll 40s linear infinite paused;width:max-content;align-items:center;will-change:transform}.marquee.is-visible .marquee-track{animation-play-state:running}
-.marquee-track a{display:flex;align-items:center;flex-shrink:0}
-.marquee-track img{height:60px;filter:brightness(0) invert(1);opacity:.45;flex-shrink:0;transition:opacity .2s}
+.marquee{overflow:hidden;padding:3rem 0;border-top:1px solid rgba(167,139,250,.1);border-bottom:1px solid rgba(34,197,94,.1);background:var(--n2);mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,1) 6%,rgba(0,0,0,1) 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,1) 6%,rgba(0,0,0,1) 94%,transparent)}
+.marquee-track{display:flex;gap:clamp(2.75rem,4vw,6rem);animation:marqueeMove var(--marquee-duration,40s) linear infinite paused;width:max-content;align-items:center;will-change:transform;transform:translate3d(0,0,0)}.marquee.is-visible .marquee-track{animation-play-state:running}
+.marquee-track a{display:flex;align-items:center;justify-content:center;flex:0 0 auto;height:64px}
+.marquee-track img{display:block;width:auto;height:auto;max-width:none;max-height:64px;filter:brightness(0) invert(1);opacity:.45;flex-shrink:0;transition:opacity .2s}
 .marquee-track a:hover img{opacity:.85}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marqueeMove{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(calc(var(--marquee-distance, 0px) * -1),0,0)}}
 
 /* ═══ DIENSTEN ═══ */
 .sec{max-width:var(--mx);margin:0 auto;padding:6rem var(--pad)}
@@ -281,7 +281,7 @@ main,footer{position:relative;z-index:1}
 @keyframes depthFar{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-150px,95px,0) scale(1.03)}}
 @keyframes depthNear{0%{transform:translate3d(0,0,0) scale(1.04);opacity:.09}50%{opacity:.16}100%{transform:translate3d(95px,-70px,0) scale(1.13);opacity:.11}}
 @media(max-width:860px){.hero-avatar::before{animation:avatarSpin 3s linear 1}.hero-avatar::after{animation:avatarPulse 3s ease-in-out 1}.hero-avatar img{animation:avatarFloat 3s ease-in-out 1}}
-@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}.hero-avatar::before,.hero-avatar::after,.hero-avatar img{animation:none}.hero-particles{display:none}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}.hero-avatar::before,.hero-avatar::after,.hero-avatar img{animation:none}.hero-particles{display:none}.marquee-track{animation:none!important;transform:none!important}}
   </style>
 </head>
 <body>
@@ -623,7 +623,16 @@ main,footer{position:relative;z-index:1}
     if(!t)return;
     var clone=t.cloneNode(true);
     clone.setAttribute('aria-hidden','true');
+    Array.from(clone.querySelectorAll('a')).forEach(function(link){
+      link.tabIndex=-1;
+    });
     while(clone.firstChild)t.appendChild(clone.firstChild);
+    function syncMarqueeMetrics(){
+      var distance=t.scrollWidth/2;
+      t.style.setProperty('--marquee-distance',distance+'px');
+      t.style.setProperty('--marquee-duration',Math.max(22,distance/42)+'s');
+    }
+    syncMarqueeMetrics();
     if('IntersectionObserver' in window){
       var marquee=t.closest('.marquee');
       var marqueeObserver=new IntersectionObserver(function(entries){
@@ -634,6 +643,12 @@ main,footer{position:relative;z-index:1}
       marqueeObserver.observe(marquee);
     }else{
       t.closest('.marquee').classList.add('is-visible');
+    }
+    if('ResizeObserver' in window){
+      var marqueeResizeObserver=new ResizeObserver(syncMarqueeMetrics);
+      marqueeResizeObserver.observe(t);
+    }else{
+      window.addEventListener('resize',syncMarqueeMetrics,{passive:true});
     }
   });
 })();
