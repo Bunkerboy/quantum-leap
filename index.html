@@ -481,12 +481,18 @@ main,footer{position:relative;z-index:1}
   if(!hero || !ctx)return;
 
   var color='79, 195, 247';
+  var fps=window.innerWidth<640?10:10;
+  var frameInterval=1000/fps;
   var frame=0;
+  var lastFrameTime=0;
   var width=0;
   var height=0;
   var particles=[];
   var columns=0;
   var rows=0;
+  var isHeroVisible=true;
+  var hasStarted=false;
+  var resizeTimer=0;
 
   function createParticles(){
     rows=width<640?48:86;
@@ -546,6 +552,8 @@ main,footer{position:relative;z-index:1}
 
   function draw(timestamp){
     frame=requestAnimationFrame(draw);
+    if(timestamp-lastFrameTime<frameInterval)return;
+    lastFrameTime=timestamp;
     ctx.clearRect(0,0,width,height);
 
     var time=timestamp*.001;
@@ -584,7 +592,8 @@ main,footer{position:relative;z-index:1}
   }
 
   function start(){
-    if(frame || document.hidden)return;
+    if(frame || document.hidden || !isHeroVisible)return;
+    lastFrameTime=0;
     frame=requestAnimationFrame(draw);
   }
 
@@ -599,11 +608,45 @@ main,footer{position:relative;z-index:1}
     else start();
   }
 
-  resize();
-  var observer=new ResizeObserver(resize);
-  observer.observe(hero);
-  document.addEventListener('visibilitychange',onVisibilityChange);
-  start();
+  function onResize(){
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(function(){
+      resize();
+    },120);
+  }
+
+  function init(){
+    if(hasStarted)return;
+    hasStarted=true;
+    resize();
+    document.addEventListener('visibilitychange',onVisibilityChange);
+    window.addEventListener('resize',onResize,{passive:true});
+    if('IntersectionObserver' in window){
+      var heroObserver=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          isHeroVisible=entry.isIntersecting;
+          if(isHeroVisible)start();
+          else stop();
+        });
+      },{threshold:.08});
+      heroObserver.observe(hero);
+    }
+    start();
+  }
+
+  if(document.readyState==='complete'){
+    setTimeout(function(){
+      if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2000});
+      else init();
+    },1800);
+  }else{
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2000});
+        else init();
+      },1800);
+    },{once:true});
+  }
 })();
 
 (function(){
@@ -618,7 +661,7 @@ main,footer{position:relative;z-index:1}
     });
   }
   // Clone marquee logos for seamless loop (kept out of static HTML to halve initial DOM)
-  requestAnimationFrame(function(){
+  function initMarquee(){
     var t=document.querySelector('[data-marquee]');
     if(!t)return;
     var clone=t.cloneNode(true);
@@ -650,7 +693,21 @@ main,footer{position:relative;z-index:1}
     }else{
       window.addEventListener('resize',syncMarqueeMetrics,{passive:true});
     }
-  });
+  }
+
+  if(document.readyState==='complete'){
+    setTimeout(function(){
+      if('requestIdleCallback' in window)requestIdleCallback(initMarquee,{timeout:1800});
+      else initMarquee();
+    },1200);
+  }else{
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        if('requestIdleCallback' in window)requestIdleCallback(initMarquee,{timeout:1800});
+        else initMarquee();
+      },1200);
+    },{once:true});
+  }
 })();
 </script>
 </body>
