@@ -58,7 +58,11 @@ h3{font-size:1.1rem;font-weight:600}
 
 /* ═══ HERO ═══ */
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:calc(64px + 4rem) var(--pad) 4rem;max-width:var(--mx);margin:0 auto}
-.hero-particles{position:absolute;top:0;left:50%;width:100vw;height:100%;transform:translateX(-50%);pointer-events:none;z-index:0}
+.hero-particles-poster,.hero-particles{position:absolute;top:0;left:50%;width:100vw;height:100%;transform:translateX(-50%);pointer-events:none;z-index:0}
+.hero-particles-poster{object-fit:cover;opacity:.92;transition:opacity .9s ease}
+.hero-particles-poster.is-hidden{opacity:0}
+.hero-particles{opacity:0;transition:opacity 1s ease}
+.hero-particles.is-visible{opacity:1}
 .hero-content{max-width:620px;position:relative;z-index:2}
 .hero-float{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1rem;z-index:1}
 .hero-card{background:rgba(16,16,46,.7);backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:var(--r);padding:1.25rem 1.5rem;min-width:180px;transition:transform .3s,border-color .3s}
@@ -297,6 +301,7 @@ main,footer{position:relative;z-index:1}
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
+  <img class="hero-particles-poster" src="/img/hero-particles-poster.svg" alt="" aria-hidden="true" decoding="async" />
   <canvas class="hero-particles" aria-hidden="true"></canvas>
   <div class="orb orb-g" style="width:500px;height:500px;top:-10%;right:-10%"></div>
   <div class="orb orb-p" style="width:400px;height:400px;bottom:0;left:-15%"></div>
@@ -473,6 +478,7 @@ main,footer{position:relative;z-index:1}
 </footer>
 <script>
 (function(){
+  var poster=document.querySelector('.hero-particles-poster');
   var canvas=document.querySelector('.hero-particles');
   if(!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 
@@ -492,49 +498,83 @@ main,footer{position:relative;z-index:1}
   var rows=0;
   var isHeroVisible=true;
   var hasStarted=false;
+  var hasFadedIn=false;
   var resizeTimer=0;
+  var initDelay=window.innerWidth<640?3200:2600;
 
   function createParticles(){
-    rows=width<640?48:86;
-    columns=width<640?64:132;
+    rows=width<640?36:64;
+    columns=width<640?48:96;
     particles=[];
     for(var row=0;row<rows;row+=1){
       var y=row/(rows-1);
       var depth=Math.pow(y,1.85);
       var titleBand=Math.exp(-Math.pow(y-.48,2)/.055);
       var avatarBand=Math.exp(-Math.pow(y-.32,2)/.05);
-      var lowerFade=y>.72?.48:1;
-      var rowColumns=Math.round(columns*(.68+depth*.75+titleBand*.8+avatarBand*.28)*lowerFade);
+      var lowerFade=y>.7?.28:1;
+      var rowColumns=Math.round(columns*(.64+depth*.62+titleBand*.58+avatarBand*.2)*lowerFade);
       for(var column=0;column<rowColumns;column+=1){
         var x=rowColumns>1?column/(rowColumns-1):0;
         var avatarFocus=Math.exp(-(Math.pow(x-.79,2)/.018+Math.pow(y-.32,2)/.038));
+        var dupGateA=(column+row)%10<7;
+        var dupGateB=(column*2+row)%10<7;
         var base={
           x:x,
           y:y,
           column:column,
           row:row,
           phase:x*8.4+row*.18,
-          grain:.82+(Math.sin(column*.73+row*1.37)*.5+.5)*.28
+          grain:.82+(Math.sin(column*.73+row*1.37)*.5+.5)*.28,
+          depth:Math.pow(y,2.08),
+          focusA:Math.exp(-(Math.pow(x-.79,2)/.014+Math.pow(y-.32,2)/.034)),
+          focusB:Math.exp(-(Math.pow(x-.38,2)/.032+Math.pow(y-.52,2)/.05)),
+          focusC:Math.exp(-(Math.pow(x-.88,2)/.02+Math.pow(y-.58,2)/.065)),
+          softZone:Math.exp(-(Math.pow(x-.12,2)/.05+Math.pow(y-.28,2)/.11)),
+          waveAX:x*11.6+y*7.4,
+          waveBX:x*20.8-y*9.1,
+          ridgeBase:Math.exp(-Math.pow(x-.72,2)/.026)
         };
+        base.spread=.7+base.depth*.98;
+        base.focus=base.focusA*1.22+base.focusB*.45+base.focusC*.72;
         particles.push(base);
-        if(avatarFocus>.24){
+        if(avatarFocus>.31 && dupGateA){
           particles.push({
             x:x+(Math.sin(column*1.9+row*.7)/(rowColumns*2.5)),
             y:y+(Math.cos(column*.8+row*1.4)/(rows*2.2)),
             column:column,
             row:row,
             phase:base.phase+.9,
-            grain:1.18
+            grain:1.18,
+            depth:base.depth,
+            focusA:base.focusA,
+            focusB:base.focusB,
+            focusC:base.focusC,
+            softZone:base.softZone,
+            waveAX:base.waveAX,
+            waveBX:base.waveBX,
+            ridgeBase:base.ridgeBase,
+            spread:base.spread,
+            focus:base.focus
           });
         }
-        if(avatarFocus>.58){
+        if(avatarFocus>.7 && dupGateB){
           particles.push({
             x:x+(Math.cos(column*1.3+row*1.8)/(rowColumns*1.9)),
             y:y+(Math.sin(column*1.6+row*.9)/(rows*1.9)),
             column:column,
             row:row,
             phase:base.phase+1.7,
-            grain:1.28
+            grain:1.28,
+            depth:base.depth,
+            focusA:base.focusA,
+            focusB:base.focusB,
+            focusC:base.focusC,
+            softZone:base.softZone,
+            waveAX:base.waveAX,
+            waveBX:base.waveBX,
+            ridgeBase:base.ridgeBase,
+            spread:base.spread,
+            focus:base.focus
           });
         }
       }
@@ -561,38 +601,38 @@ main,footer{position:relative;z-index:1}
     var surfaceHeight=height*1.18;
     var center=width*.5;
     var isMobile=width<640;
+    ctx.fillStyle='rgb('+color+')';
 
     for(var i=0;i<particles.length;i+=1){
       var p=particles[i];
-      var depth=Math.pow(p.y,2.08);
-      var spread=.7+depth*.98;
-      var focusA=Math.exp(-(Math.pow(p.x-.79,2)/.014+Math.pow(p.y-.32,2)/.034));
-      var focusB=Math.exp(-(Math.pow(p.x-.38,2)/.032+Math.pow(p.y-.52,2)/.05));
-      var focusC=Math.exp(-(Math.pow(p.x-.88,2)/.02+Math.pow(p.y-.58,2)/.065));
-      var softZone=Math.exp(-(Math.pow(p.x-.12,2)/.05+Math.pow(p.y-.28,2)/.11));
-      var focus=focusA*1.22+focusB*.45+focusC*.72;
-      var waveA=Math.sin(p.x*11.6+p.y*7.4-time*1.02);
-      var waveB=Math.sin(p.x*20.8-p.y*9.1+time*.58);
-      var ridge=Math.exp(-Math.pow(p.x-.72,2)/.026)*Math.sin(p.y*9.8-time*.86);
-      var x=center+(p.x-.5)*width*spread;
-      var y=horizon+depth*surfaceHeight+(waveA*52+waveB*18+ridge*112)*(1-p.y*.56);
+      var waveA=Math.sin(p.waveAX-time*1.02);
+      var waveB=Math.sin(p.waveBX+time*.58);
+      var ridge=p.ridgeBase*Math.sin(p.y*9.8-time*.86);
+      var x=center+(p.x-.5)*width*p.spread;
+      var y=horizon+p.depth*surfaceHeight+(waveA*52+waveB*18+ridge*112)*(1-p.y*.56);
 
       if(x<-16 || x>width+16 || y<-16 || y>height+64)continue;
 
       var textFade=x<width*.55&&y<height*.72?.38:1;
       var lowerFade=y>height*.72?.46:1;
       var crest=Math.max(0,(waveA+ridge*.8+1)*.5);
-      var alpha=(.06+depth*.44+focus*.42+crest*.11)*textFade*lowerFade*p.grain*(1-softZone*.46);
+      var alpha=(.06+p.depth*.44+p.focus*.42+crest*.11)*textFade*lowerFade*p.grain*(1-p.softZone*.46);
       alpha=Math.min(.9,Math.max(.02,alpha));
-      var size=(isMobile?.42:.5)+depth*(isMobile?1.35:2.05)+focus*(isMobile?.72:1.1)+crest*.28;
+      var size=(isMobile?.42:.5)+p.depth*(isMobile?1.35:2.05)+p.focus*(isMobile?.72:1.1)+crest*.28;
 
-      ctx.fillStyle='rgba('+color+','+alpha+')';
+      ctx.globalAlpha=alpha;
       ctx.fillRect(x-size*.5,y-size*.5,size,size);
     }
+    ctx.globalAlpha=1;
   }
 
   function start(){
     if(frame || document.hidden || !isHeroVisible)return;
+    if(!hasFadedIn){
+      hasFadedIn=true;
+      canvas.classList.add('is-visible');
+      if(poster)poster.classList.add('is-hidden');
+    }
     lastFrameTime=0;
     frame=requestAnimationFrame(draw);
   }
@@ -636,15 +676,15 @@ main,footer{position:relative;z-index:1}
 
   if(document.readyState==='complete'){
     setTimeout(function(){
-      if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2000});
+      if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2200});
       else init();
-    },1800);
+    },initDelay);
   }else{
     window.addEventListener('load',function(){
       setTimeout(function(){
-        if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2000});
+        if('requestIdleCallback' in window)requestIdleCallback(init,{timeout:2200});
         else init();
-      },1800);
+      },initDelay);
     },{once:true});
   }
 })();
